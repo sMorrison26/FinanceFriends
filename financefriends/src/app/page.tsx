@@ -3,11 +3,11 @@ import MapboxComponent from "@/components/map.component";
 export default function Home() {
   return (
     <MapboxComponent
-      defaultCenter={[-73.985656, 40.748433]} // Replace with your desired coordinates
-      defaultZoom={14}                        // Example zoom level
+      defaultCenter={[-73.691482, 42.732983]} // Replace with your desired coordinates
+      defaultZoom={16}                        // Example zoom level
       defaultMaxZoom={22}                     // Example max zoom
-      defaultPitch={60}                       // Example pitch
-      defaultBearing={-30}                    // Example bearing
+      defaultPitch={65}                       // Example pitch
+      defaultBearing={125}                    // Example bearing
     />
     // <main className="flex min-h-screen flex-col items-center justify-between p-24">
     //   <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
