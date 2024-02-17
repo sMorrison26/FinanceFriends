@@ -15,9 +15,8 @@ interface MapComponentProps {
   defaultMaxZoom: number;
   defaultPitch: number;
   defaultBearing: number;
-  
-}
 
+}
 const MapComponent: React.FC<MapComponentProps> = ({
   defaultCenter,
   defaultZoom,
@@ -26,6 +25,7 @@ const MapComponent: React.FC<MapComponentProps> = ({
   defaultBearing,
 }) => {
   const mapContainer = useRef<HTMLDivElement>(null);
+  const map = useRef<mapboxgl.Map | null>(null); // Use useRef to hold the map instance
 
   useEffect(() => {
     mapboxgl.accessToken = "pk.eyJ1IjoiaGVucnlyb2JiIiwiYSI6ImNsc3E5cWZwbTB6MWQybm51ZWhnNXZqdGYifQ.VP-6WVFeERn_zB1sN8PZdA";
@@ -93,15 +93,30 @@ const MapComponent: React.FC<MapComponentProps> = ({
         );
       });
 
+
+
       // Clean up on unmount
       return () => map.remove();
     }
   }, [defaultCenter, defaultZoom, defaultMaxZoom, defaultPitch, defaultBearing]);
 
+  // In map.component.tsx
+  useEffect(() => {
+    if (!map.current) return; // Ensure the map instance is available
+
+    // Reacts to prop changes and updates the map view
+    map.current.flyTo({
+      center: defaultCenter,
+      zoom: defaultZoom,
+      pitch: defaultPitch,
+      bearing: defaultBearing,
+    });
+  }, [defaultCenter, defaultZoom, defaultMaxZoom, defaultPitch, defaultBearing]); // Dependencies on props to listen for changes
+
   return (
     <div
       ref={mapContainer}
-      style={{ position: "absolute", top: 0, bottom: 0, width: "100%" }}
+      style={{ position: "absolute", top: 50, bottom: 0, width: "100%" }}
     />
   );
 };
