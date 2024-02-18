@@ -286,7 +286,7 @@
           "task":"New Shoes",
           "priority":"Want",
           "cost":"-100",
-          "utility":"Want",
+          "utility":"50",
           "time":".5hr",
           "yesMessage":"Nice! You got some cool new kicks.",
           "noMessage":"It's ok, you'll ask for new shoes for your birthday."
