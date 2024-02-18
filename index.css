@@ -3,6 +3,13 @@ body {
   margin: 0;
   font-size: 16px;
 }
+#map {
+    position: absolute;
+    top: 200;
+    bottom: 200;
+    width: 75%;
+    border-radius: 10px;
+  }
 
 #nav {
   display: flex;
