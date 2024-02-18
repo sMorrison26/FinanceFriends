@@ -1,3 +1,14 @@
+mapboxgl.accessToken = 'pk.eyJ1IjoiaGVucnlyb2JiIiwiYSI6ImNsc3E5cWZwbTB6MWQybm51ZWhnNXZqdGYifQ.VP-6WVFeERn_zB1sN8PZdA';
+const map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/henryrobb/clsqtqx3i00fd01o4b21p132d',
+    center: [-73.691482, 42.732983],
+    zoom: 16,
+    maxZoom: 25,
+    pitch: 65,
+    bearing: 125
+});
+
 function loadMarkers() {
     $.ajax({
         url: './businesses.geojson', // Update to the actual path
@@ -16,12 +27,9 @@ function loadMarkers() {
                 console.log("div: ", div);
                 // Create a new popup with the div's content
                 const popup = new mapboxgl.Popup().setDOMContent(div);
-                console.log("popup", popup);
-                // Create an HTML element for the marker
-                const el = document.createElement('div');
-                el.className = 'marker'; // You can set a class for CSS styling
+                
                 console.log("coords: ", feature.geometry.coordinates);
-                new mapboxgl.Marker(el)
+                new mapboxgl.Marker()
                     .setLngLat(feature.geometry.coordinates)
                     .setPopup(popup) // sets a popup on this marker
                     .addTo(map);
@@ -35,28 +43,5 @@ function loadMarkers() {
 }
 
 $(document).ready(function () {
-    mapboxgl.accessToken = 'pk.eyJ1IjoiaGVucnlyb2JiIiwiYSI6ImNsc3E5cWZwbTB6MWQybm51ZWhnNXZqdGYifQ.VP-6WVFeERn_zB1sN8PZdA';
-    const map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/henryrobb/clsqtqx3i00fd01o4b21p132d',
-        center: [-73.691482, 42.732983],
-        zoom: 16,
-        maxZoom: 25,
-        pitch: 65,
-        bearing: 125
-    });
-    const popup = new mapboxgl.Popup({ offset: 25 }).setText(
-        'Construction on the Washington Monument began in 1848.'
-    );
-    // create DOM element for the marker
-    const el = document.createElement('div');
-    el.id = 'marker';
-    const monument = [-73.6880956,
-        42.7321609]
-    // create the marker
-    new mapboxgl.Marker(el)
-        .setLngLat(monument)
-        .setPopup(popup) // sets a popup on this marker
-        .addTo(map);
     loadMarkers();
 });
