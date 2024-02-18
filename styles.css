@@ -325,3 +325,7 @@ body {
   margin-left: 5%;
 
 }
+
+#racks, #motion, #swag {
+  font-weight: bold;
+}
