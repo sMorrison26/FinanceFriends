@@ -57,12 +57,12 @@ body {
 .bar {
   display: flex;
   justify-content: space-between;
-  height: 2rem;
+  /* height: 1rem; */
   background-image: linear-gradient(to right, #2DE1FC, #5887FF);
   font-size: 1.25rem;
   color: white;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
   padding-left: 1rem;
   padding-right: 1rem;
 }
@@ -113,5 +113,8 @@ body {
 }
 
 .reset-button {
-    position: absolute;
+  position: absolute;
+}
+#tasksTable {
+  width: 100%;
 }
