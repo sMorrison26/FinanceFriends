@@ -180,7 +180,9 @@ function accpeted(id){
                 else { substringUpToFirstSpace=feature.properties.name; }
                 if (id == substringUpToFirstSpace){
                     $(`#${id}`).html(`${feature.properties.taskInfo.yesMessage}`);
-                    
+                    budget += feature.properties.taskInfo.cost;
+                    minutes -= feature.properties.taskInfo.time;
+                    utility += feature.properties.taskInfo.utility;
                 }                
             });
         },
