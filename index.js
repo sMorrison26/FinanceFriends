@@ -116,9 +116,9 @@ budgetdiv.innerHTML = `<div>
 <p>My Transactions:</p>
 <div id="budgetHistory">
  </div>
-<p id="racks">Remaining Balance: $1800</p>
-<p id="motion">Remaining Time: 480 min</p>
-<p id="swag">Happiness Points: 0</p>
+<h3 id="racks">Remaining Balance: $1800</h3>
+<h3 id="motion">Remaining Time: 480 min</h3>
+<h3 id="swag">Happiness Points: 0</h3>
 </div>
 `;
 
