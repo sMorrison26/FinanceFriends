@@ -7,6 +7,11 @@ $(document).ready(function () {
 
     getBusinesses();
 
+    $("#logo").click(function() {
+        console.log('hi');
+        window.location.href="./index.html";
+    })
+
 })
 
 
