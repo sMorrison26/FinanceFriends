@@ -100,10 +100,10 @@ function loadMarkers() {
                 else { substringUpToFirstSpace=feature.properties.name; }
 
                 let output = `<h2>${feature.properties.name}</h2>`;
+                output += `<h3>${feature.properties.taskInfo.task}</h3>`;
                 output += `<p>${feature.properties.description}</p>`;
                 output += `<a href="${feature.properties.website}">Website</a>`;
                 output += `<div id="${substringUpToFirstSpace}">`;
-                output += `<p>${feature.properties.taskInfo.task}</p>`;
                 output += `<input id="ye${substringUpToFirstSpace}" class="yesButton" type="submit" value="Yes">`;
                 output += `<input id="no${substringUpToFirstSpace}" class="noButton" type="submit" value="No">`;
                 output += `</div>`;
