@@ -21,7 +21,7 @@ body {
   padding-bottom: 1.5rem; 
   font-weight: 500; 
   color: white; 
-  background-color: black; 
+  background-image: linear-gradient(to right, #2DE1FC, #5887FF);
 }
 #nav > p {
   font-size: 1.25rem;
