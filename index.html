@@ -10,14 +10,41 @@
     <nav id="nav">
       <p>Finance Friends: Explore Troy</p>
       <div>
-        <a href="./instructions.html" className="text-xl hover:underline  hover:bg-gradient-to-r from-[#2DE1FC] to-[#5887FF] hover:bg-clip-text hover:text-transparent decoration-white underline-offset-8 decoration-2">Instruction</a>
-        <a href="./resources.html" className="text-xl hover:underline  hover:bg-gradient-to-r from-[#2DE1FC] to-[#5887FF] hover:bg-clip-text hover:text-transparent decoration-white underline-offset-8 decoration-2">Resources</a>
-        <a href="./about.html" className="text-xl hover:underline  hover:bg-gradient-to-r from-[#2DE1FC] to-[#5887FF] hover:bg-clip-text hover:text-transparent decoration-white underline-offset-8 decoration-2">About</a>
+        <a href="./instructions.html">Instructions</a>
+        <a href="./resources.html">Resources</a>
+        <a href="./about.html">About</a>
       </div>
     </nav>
-    <div></div>
-    <div id="map"></div>
-    <div></div>
+    <main id="main" className="h-full bg-white">
+      <div class="bar">
+        <div class="icon-container">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="wallet">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a2.25 2.25 0 0 0-2.25-2.25H15a3 3 0 1 1-6 0H5.25A2.25 2.25 0 0 0 3 12m18 0v6a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 18v-6m18 0V9M3 12V9m18 0a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 9m18 0V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v3" />
+          </svg>
+          <p>Wallet</p>          
+        </div>
+        <div class="icon-container">
+          <p>Tasks</p>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="listbullet">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM3.75 12h.007v.008H3.75V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm-.375 5.25h.007v.008H3.75v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+          </svg>          
+        </div>
+      </div>
+      <div class="content">
+        <div id="budget" >
+          <div className="m-4 bg-white rounded-xl h-4/5 p-4 shadow-xl">
+            <p className="text-3xl font-medium">My Budget: </p>
+            <p className="text-2xl font-medium">My Transactions:</p>
+            <p className="text-2xl font-medium">Remaining Balance: </p>
+          </div>
+        </div>
+        <div id="tasks">
+          <div className="m-4 bg-white rounded-xl h-4/5 p-4 shadow-xl">
+            <p className="text-3xl font-medium">My Tasks: </p>
+          </div>
+        </div> 
+      </div>
+    </main>
 
   </body>
 </html>
