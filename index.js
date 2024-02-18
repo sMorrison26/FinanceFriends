@@ -155,24 +155,24 @@ function loadMarkers() {
         success: function (data) {
             // Use forEach, not foreach (JavaScript is case-sensitive)
             data.features.forEach(feature => {
-                let firstSpaceIndex = (feature.properties.name).indexOf(' '); // Find the index of the first space
-                var substringUpToFirstSpace = '';
-                // Check if there's a space in the string
-                if (firstSpaceIndex !== -1) { substringUpToFirstSpace = (feature.properties.name).substring(0, firstSpaceIndex); }
-                else { substringUpToFirstSpace = feature.properties.name; }
+                // let firstSpaceIndex = (feature.properties.name).indexOf(' '); // Find the index of the first space
+                // var substringUpToFirstSpace = '';
+                // if (firstSpaceIndex !== -1) { substringUpToFirstSpace = (feature.properties.name).substring(0, firstSpaceIndex); }
+                // else { substringUpToFirstSpace = feature.properties.name; }
 
                 let output = `<h2>${feature.properties.name}</h2>`;
                 output += `<h3>${feature.properties.taskInfo.task}</h3>`;
                 output += `<p>${feature.properties.description}</p>`;
                 output += `<a href="${feature.properties.website}">Website</a>`;
-                output += `<div id="${substringUpToFirstSpace}">`;
-                output += `<input id="ye${substringUpToFirstSpace}" class="yesButton" type="submit" value="Yes">`;
-                output += `<input id="no${substringUpToFirstSpace}" class="noButton" type="submit" value="No">`;
+                output += `<div id="${feature.properties.name.replace(/ /g, "")}">`;
+                output += `<input id="ye${feature.properties.name.replace(/ /g, "")}" class="yesButton" type="submit" value="Yes">`;
+                output += `<input id="no${feature.properties.name.replace(/ /g, "")}" class="noButton" type="submit" value="No">`;
                 output += `</div>`;
                 const div = document.createElement('div');
                 div.innerHTML = output;
                 const popup = new mapboxgl.Popup().setDOMContent(div);
-                console.log(feature.properties.name.replace(/ /g, "_"));
+                console.log("My name is: ",feature.properties.name);
+                console.log("My task div id is: ",feature.properties.name.replace(/ /g, ""))
                 markers[feature.properties.name.replace(/ /g, "_")] = new mapboxgl.Marker()
                     .setLngLat(feature.geometry.coordinates)
                     .setPopup(popup) // sets a popup on this marker
@@ -190,6 +190,7 @@ $(document).ready(async function () {
     $(document).on('click', '.yesButton', function () {
         let id = this.id; // Get the id of the clicked element
         id = id.substring(2);
+        console.log('My id is: ',id)
         $(`#${id}`).html('');
         accpeted(id);
     });
@@ -210,12 +211,7 @@ function denied(id) {
         success: function (data) {
             $(`#${id}`).html(`<p>${data.feat}`);
             data.features.forEach(feature => {
-                let firstSpaceIndex = (feature.properties.name).indexOf(' '); // Find the index of the first space
-                var substringUpToFirstSpace = '';
-                // Check if there's a space in the string
-                if (firstSpaceIndex !== -1) { substringUpToFirstSpace = (feature.properties.name).substring(0, firstSpaceIndex); }
-                else { substringUpToFirstSpace = feature.properties.name; }
-                if (id == substringUpToFirstSpace) {
+                if (id == feature.properties.name.replace(/ /g, "")) {
                     $(`#${id}`).html(`${feature.properties.taskInfo.noMessage}`);
                 }
             });
@@ -235,12 +231,7 @@ function accpeted(id) {
         success: function (data) {
             $(`#${id}`).html(`<p>${data.feat}`);
             data.features.forEach(feature => {
-                let firstSpaceIndex = (feature.properties.name).indexOf(' '); // Find the index of the first space
-                var substringUpToFirstSpace = '';
-                // Check if there's a space in the string
-                if (firstSpaceIndex !== -1) { substringUpToFirstSpace = (feature.properties.name).substring(0, firstSpaceIndex); }
-                else { substringUpToFirstSpace = feature.properties.name; }
-                if (id == substringUpToFirstSpace) {
+                if (id == feature.properties.name.replace(/ /g, "")) {
                     $(`#${id}`).html(`${feature.properties.taskInfo.yesMessage}`);
                     // Update the budget and time by the cost and time of the task using string to number conversion
                     budget += parseInt(feature.properties.taskInfo.cost);
