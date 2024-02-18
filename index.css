@@ -14,19 +14,19 @@ body {
 #nav {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-  color: white;
-  font-size: 1.25rem;
-  height: 3%;
-
+  padding-left: 0.75rem; 
+  padding-right: 0.75rem; 
+  padding-top: 1.25rem; 
+  padding-bottom: 1.25rem; 
+  font-weight: 500; 
+  color: white; 
+  background-image: linear-gradient(to right, #2DE1FC, #5887FF);
 }
 
 #nav > p {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
 }
 #nav > div {
   display: flex;
@@ -88,12 +88,11 @@ body {
 .wallet {
   height: 2rem; 
   width: 2rem; 
-  margin-right: 1rem;
 }
 .listbullet {
   height: 2rem; 
   width: 2rem; 
-  margin-left: 1rem;
+  /* margin-left: 1rem; */
 }
 #budget {
   /* width: 40%;  */
@@ -104,6 +103,10 @@ body {
   
 }
 #budget > div, #tasks > div {
+  /* overscroll-behavior-y: contain;
+  overscroll-behavior-inline: contain;
+  overflow-y: scroll;  */
+  overflow: auto; 
   margin: 1rem;
   background-color: white;
   border-radius: 0.75rem;

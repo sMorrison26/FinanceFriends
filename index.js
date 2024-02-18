@@ -1,4 +1,7 @@
+var budget = 1800;
+var hours = 8;
 $(document).ready(function () {
+
     getBusinesses();
 })
 
@@ -64,12 +67,12 @@ tasksdiv.innerHTML = `<div id="tasksList"></div>`;
 // Create a div to hold the budget information
 const budgetdiv = document.createElement('div');
 budgetdiv.id = 'budget';
-budgetdiv.innerHTML = `
-<div>
-<p>My Budget:           
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="listbullet">
-    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM3.75 12h.007v.008H3.75V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm-.375 5.25h.007v.008H3.75v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
-  </svg>   
+budgetdiv.innerHTML = `<div>
+<p style="display:flex;justify-content:space-between;align-items:center;"   >My Budget:           
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="wallet">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a2.25 2.25 0 0 0-2.25-2.25H15a3 3 0 1 1-6 0H5.25A2.25 2.25 0 0 0 3 12m18 0v6a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 18v-6m18 0V9M3 12V9m18 0a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 9m18 0V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v3" />
+</svg>
+ 
 </p>
 <p>My Transactions:</p>
 <p>Remaining Balance: </p>
@@ -128,28 +131,28 @@ function getBusinesses(){
         content: 'json',
         success: function(data) {
             let output = `
-            <p style="display:flex; justify-content:space-between;align-items:center;">
+            <p style="display:flex; justify-content:space-between;align-items:center; margin-bottom:0.5em;">
                 My Tasks: 
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="listbullet">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM3.75 12h.007v.008H3.75V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm-.375 5.25h.007v.008H3.75v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
                 </svg>
             </p>`;
             let i=0;
+            output+=`<table class="tasksTable">`;
             $(data.features).each(function() {
                 console.log(i);
                 console.log(this)
                 if (i==0 || i==5 || i == 11){
                     output += `
-                    <table class="tasksTable">
-                        <tr style="text-align:left">
-                            <th>`;
+                        <tr style="text-align:left;">
+                            <th style="padding-top:1rem;">`;
                             if (i == 0) output += `Need to Do:`
                             if (i == 5) output += `Want to Do:`
                             if (i == 11) output += `Ways to Earn:`
                     output += `</th>
-                            <th>HP:&nbsp;</th>
-                            <th>Cost:&nbsp;</th>
-                            <th>Time:&nbsp;</th>
+                            <th style="padding-top:1rem;">HP:&nbsp;</th>
+                            <th style="padding-top:1rem;">Cost:&nbsp;</th>
+                            <th style="padding-top:1rem;">Time:&nbsp;</th>
                         </tr>`;
                 }
                 output += `
@@ -160,9 +163,6 @@ function getBusinesses(){
                         <td>`+this.properties.taskInfo.time+`</td>
                     <tr>                   
                 `;
-                if (i==4 || i == 10){
-                    output += `</table><hr>`;
-                }
                 i++;
             });
             output += `</table>`
