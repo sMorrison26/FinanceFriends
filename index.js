@@ -196,7 +196,6 @@ function accpeted(id) {
                 else { substringUpToFirstSpace = feature.properties.name; }
                 if (id == substringUpToFirstSpace) {
                     $(`#${id}`).html(`${feature.properties.taskInfo.yesMessage}`);
-<<<<<<< Updated upstream
                     // Update the budget and time by the cost and time of the task using string to number conversion
                     budget += parseInt(feature.properties.taskInfo.cost);
                     console.log(budget);
@@ -210,15 +209,6 @@ function accpeted(id) {
         },
         
         error: function(err){
-=======
-                    budget += feature.properties.taskInfo.cost;
-                    minutes -= feature.properties.taskInfo.time;
-                    utility += feature.properties.taskInfo.utility;
-                }
-            });
-        },
-        error: function (err) {
->>>>>>> Stashed changes
             console.error(err)
         }
     })
