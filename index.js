@@ -1,15 +1,14 @@
-var budget = 1800;
-var minutes = 480;
-var utility = 0;
+var budget = 1800; // Initial budget
+var minutes = 480; // Initial time
+var utility = 0; // Initial happiness points
 let markers = {}; // Object to store your markers by their unique IDs
 
+//  Function to get the businesses from the GeoJSON file
 $(document).ready(function () {
-
     getBusinesses();
-
 })
 
-
+// Function to get the businesses from the GeoJSON file
 mapboxgl.accessToken = 'pk.eyJ1IjoiaGVucnlyb2JiIiwiYSI6ImNsc3E5cWZwbTB6MWQybm51ZWhnNXZqdGYifQ.VP-6WVFeERn_zB1sN8PZdA';
 const map = new mapboxgl.Map({
     container: 'map',
@@ -21,6 +20,7 @@ const map = new mapboxgl.Map({
     bearing: 125
 });
 
+// Add zoom and rotation controls to the map
 map.on('click', (event) => {
     const features = map.queryRenderedFeatures(event.point, {
         layers: ['businesses-test']
@@ -37,10 +37,10 @@ map.on('click', (event) => {
 
         )
         .addTo(map);
-
-
 });
 
+
+// Default position for the camera
 const resetButton = document.createElement('button');
 resetButton.textContent = 'Reset View';
 resetButton.className = 'reset-button';
@@ -53,6 +53,7 @@ resetButton.onclick = function () {
     });
 };
 
+// Updating the budget and time
 const endDay = document.createElement('button');
 endDay.textContent = 'End Day';
 endDay.className = 'endday';
@@ -62,7 +63,9 @@ endDay.onclick = function () {
     const modalContent = document.getElementsByClassName("modal-content")[0];
     var Happiness_outcome;
     var Budget_outcome;
-    if (budget < 200) {
+
+    // Different outcomes based on the budget and happiness points
+    if(budget < 200){
         Budget_outcome = `You saved ${budget} this month, keep it up to try and save more next month!`;
     }
     else {
@@ -115,6 +118,7 @@ budgetdiv.innerHTML = `<div>
 </div>
 `;
 
+// Function to update the budget history
 function updateBudgetHistory(cost, task) {
     let value = parseInt(cost);
     const transaction = document.createElement('div');
@@ -138,6 +142,7 @@ map.getCanvas().parentNode.appendChild(budgetdiv);
 map.getCanvas().parentNode.appendChild(resetButton);
 map.getCanvas().parentNode.appendChild(endDay);
 
+// Function to load the markers from the GeoJSON file
 function loadMarkers() {
     $.ajax({
         url: './businesses.geojson', // Update to the actual path
@@ -192,6 +197,7 @@ $(document).ready(async function () {
     });
 });
 
+// Function to update the budget and time when a task is denied
 function denied(id) {
     $.ajax({
         type: 'GET',
@@ -216,6 +222,7 @@ function denied(id) {
     })
 }
 
+// Function to update the budget and time when a task is accepted
 function accpeted(id) {
     $.ajax({
         type: 'GET',
@@ -250,13 +257,15 @@ function accpeted(id) {
 
 }
 
-
+// Function to get the businesses from the GeoJSON file
 function getBusinesses() {
+    // Get the businesses from the GeoJSON file
     $.ajax({
         type: 'GET',
         url: './businesses.geojson',
         content: 'json',
         success: function (data) {
+            // Create the tasks list
             let output = `
             <p style="display:flex; justify-content:space-between;align-items:center; margin-bottom:0.5em;">
                 My Tasks: 
@@ -266,6 +275,8 @@ function getBusinesses() {
             </p>`;
             let i = 0;
             output += `<table class="tasksTable">`;
+
+            // Loop through the features and add them to the tasks list
             $(data.features).each(function () {
                 if (i == 0 || i == 5 || i == 11) {
                     output += `
@@ -294,6 +305,8 @@ function getBusinesses() {
             output += `</table>`
             $("#tasksList").html(output);
         },
+
+        // Log the error if there is one
         error: function (err) {
             console.error(err);
         }
