@@ -17,6 +17,7 @@ body {
     height: 92%;
     border-radius: 10px;
 }
+
 #nav {
   display: flex;
   justify-content: space-between;
@@ -28,6 +29,7 @@ body {
   font-weight: 500; 
   color: white;
   height: 30px;
+  box-shadow: 2px 2px 10px lightgray;
 }
 
 #logo > h1 {
@@ -203,4 +205,11 @@ body {
 
 #tasksList {
     box-shadow: 0 100px 20px black;
+}
+
+#main-resources {
+  margin-top: 3%;
+  margin-right: 5%;
+  margin-left: 5%;
+
 }
