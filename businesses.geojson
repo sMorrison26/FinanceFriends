@@ -434,8 +434,8 @@
         },
         "description": "Licensed after school program serving low to moderate income families in the community. We also offer a teen program and traveling summer camp.",
         "taskInfo": {
-          "task":"",
-          "priority":"Support a Non-Profit",
+          "task":"Support a Non-Profit",
+          "priority":"Want",
           "cost":"-10",
           "utility":"10",
           "time":".5hr",
