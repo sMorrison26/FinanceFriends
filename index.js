@@ -329,6 +329,7 @@ function openPin(element, coords) {
     } else {
         //console.log("No marker found for ID:", id);
     }
+    // Assuming you have a MapboxGL map object called 'map' and coordinates 
     // Convert string coordinates to numbers and fly to them
     let arr = coords.split("_").map(Number);
     map.flyTo({
@@ -337,4 +338,25 @@ function openPin(element, coords) {
         pitch: 65,
         bearing: 125
     });
+    //wait one second
+    setTimeout(() => {
+        //simulate a click on the marker
+        click(863, 510);
+    }, 2000);
+
+}
+
+function click(x, y)
+{
+    var ev = new MouseEvent('click', {
+        'view': window,
+        'bubbles': true,
+        'cancelable': true,
+        'screenX': x,
+        'screenY': y
+    });
+
+    var el = document.elementFromPoint(x, y);
+
+    el.dispatchEvent(ev);
 }
