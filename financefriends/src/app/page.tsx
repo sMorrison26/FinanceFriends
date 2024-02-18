@@ -28,7 +28,7 @@ export default function Home() {
           <ListBulletIcon className="h-8 w-8 ml-4"></ListBulletIcon>
         </div>
       </div>
-      <div  className={`flex justify-between w-full text-black h-full transition-transform duration-300 ease-in-out ${isVisibleW ? 'transform translate-x-0' : 'transform -translate-x-full'}`}>
+      <div className="content">
         <div id="budget" className="bg-[#2DE1FC] bg-opacity-50 w-1/3 h-full text-black">
           <div className="m-4 bg-white rounded-xl h-4/5 p-4 shadow-xl">
             <p className="text-3xl font-medium">My Budget: </p>
