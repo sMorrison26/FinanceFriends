@@ -75,25 +75,50 @@ budgetdiv.innerHTML = `<div>
     <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a2.25 2.25 0 0 0-2.25-2.25H15a3 3 0 1 1-6 0H5.25A2.25 2.25 0 0 0 3 12m18 0v6a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 18v-6m18 0V9M3 12V9m18 0a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 9m18 0V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v3" />
 </svg>
  </p>
+ <div id="budgetHistory">
+ </div>
 <p>My Transactions:</p>
-<p>Remaining Balance: $1800</p>
-<p>Remaining Time: 480 min</p>
-<p>Happiness Points: 0</p>
+<p id="racks">Remaining Balance: $1800</p>
+<p id="motion">Remaining Time: 480 min</p>
+<p id="swag">Happiness Points: 0</p>
 </div>
 `;
-function updateBudget() {
-    budgetdiv.innerHTML = `<div>
-    <p style="display:flex;justify-content:space-between;align-items:center;">My Budget: $1800          
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="wallet">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a2.25 2.25 0 0 0-2.25-2.25H15a3 3 0 1 1-6 0H5.25A2.25 2.25 0 0 0 3 12m18 0v6a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 18v-6m18 0V9M3 12V9m18 0a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 9m18 0V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v3" />
-    </svg>
-     </p>
-    <p>My Transactions:</p>
-    <p>Remaining Balance: $${budget}</p>
-    <p>Remaining Time: ${minutes} min</p>
-    <p>Happiness Points: ${utility}</p>
-    </div>
-    `;
+// function updateBudget() {
+//     budgetdiv.innerHTML = `<div>
+//     <p style="display:flex;justify-content:space-between;align-items:center;">My Budget: $1800          
+//     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="wallet">
+//         <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a2.25 2.25 0 0 0-2.25-2.25H15a3 3 0 1 1-6 0H5.25A2.25 2.25 0 0 0 3 12m18 0v6a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 18v-6m18 0V9M3 12V9m18 0a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 9m18 0V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v3" />
+//     </svg>
+//      </p>
+//     <p>My Transactions:</p>
+//     <div id="budgetHistory">
+//     </div>
+//     <p>Remaining Balance: $${budget}</p>
+//     <p>Remaining Time: ${minutes} min</p>
+//     <p>Happiness Points: ${utility}</p>
+//     </div>
+//     `;
+// }
+
+function updateBudgetHistory(cost, task) {
+    let value = parseInt(cost);
+    const budgetHistory = document.getElementById('budgetHistory'); // Fix: Replace 'budgetHisotry' with 'budgetHistory'
+    const transaction = document.createElement('div');
+    transaction.className = 'budgetHistoryTransaction';
+    if (value > 0) {
+        transaction.innerHTML = `<p class="budgetHistoryTask">${task}</p><p class="positive">$${value}</p>`;
+    }
+    else {
+        transaction.innerHTML = `<p class="budgetHistoryTask">${task}</p><p class="negative">$${value}</p>`;
+    }
+    console.log(transaction);
+    budgetHistory.appendChild(transaction);
+    const racks = document.getElementById('racks');
+    const motion = document.getElementById('motion');
+    const swag = document.getElementById('swag');
+    racks.innerHTML = `Remaining Balance: $${budget}`;
+    motion.innerHTML = `Remaining Time: ${minutes} min`;
+    swag.innerHTML = `Happiness Points: ${utility}`;
 }
 
 // Add the divs to the map
@@ -201,7 +226,7 @@ function accpeted(id){
                     console.log(budget);
                     minutes -= parseInt(feature.properties.taskInfo.time);
                     utility += parseInt(feature.properties.taskInfo.utility);
-                    updateBudget();
+                    updateBudgetHistory(feature.properties.taskInfo.cost, feature.properties.taskInfo.task);
                     console.log(feature.properties.taskInfo.cost);
                     console.log(feature.properties.taskInfo.task);
                 }                

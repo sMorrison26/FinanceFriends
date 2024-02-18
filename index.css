@@ -203,5 +203,25 @@ body {
 }
 
 #tasks > #tasksList {
-    height: 100%;s
+    height: 100%;
+}
+
+.positive {
+    color: #4CAF50;
+    margin: 5px 0;
+}
+
+.negative {
+    color: #f44336;
+    margin: 5px 0;
+}
+
+.budgetHistoryTask {
+    margin: 5px 0;
+}
+
+.budgetHistoryTransaction {
+    display: flex;
+    align-items: row;
+    justify-content: space-between;
 }
