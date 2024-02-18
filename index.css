@@ -90,7 +90,7 @@ body {
 }
 #budget {
   background-color: #2DE1FC; 
-  width: 33.333333%; 
+  /* width: 40%;  */
   height: 100%; 
   color: black; 
 }
