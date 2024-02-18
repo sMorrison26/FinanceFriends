@@ -163,7 +163,7 @@ function loadMarkers() {
                 let output = `<h2>${feature.properties.name}</h2>`;
                 output += `<h3>${feature.properties.taskInfo.task}</h3>`;
                 output += `<p>${feature.properties.description}</p>`;
-                output += `<a href="${feature.properties.website}">Website</a>`;
+                output += `<a href="${feature.properties.website}" target="_blank">Website</a>`;
                 output += `<div id="${feature.properties.name.replace(/ /g, "")}">`;
                 output += `<input id="ye${feature.properties.name.replace(/ /g, "")}" class="yesButton" type="submit" value="Yes">`;
                 output += `<input id="no${feature.properties.name.replace(/ /g, "")}" class="noButton" type="submit" value="No">`;
