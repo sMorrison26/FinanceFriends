@@ -1,5 +1,5 @@
 var budget = 1800;
-var hours = 8;
+var minutes = 480;
 $(document).ready(function () {
 
     getBusinesses();
