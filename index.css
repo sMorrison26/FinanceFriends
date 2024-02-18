@@ -107,9 +107,12 @@ body {
   font-weight: 500; 
 }
 #tasks {
-  background-color: rgba(88, 135, 255, 0.5);
-  width: 33.333333%;
+  /* background-color: rgba(88, 135, 255, 0.5); */
+  width: 25%;
   height: 100%;
+  position: absolute;
+  right: 0;
+  z-index: 1;
 }
 
 .reset-button {
@@ -135,4 +138,7 @@ body {
 }
 #tasksTable {
   width: 100%;
+}
+#tasksList {
+    box-shadow: 0 100px 20px black;
 }
