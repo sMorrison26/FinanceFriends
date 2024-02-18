@@ -169,7 +169,6 @@ function getBusinesses() {
         type: 'GET',
         url: './businesses.geojson',
         content: 'json',
-<<<<<<< Updated upstream
         success: function(data) {
             let output = `
             <p style="display:flex; justify-content:space-between;align-items:center; margin-bottom:0.5em;">
@@ -196,20 +195,6 @@ function getBusinesses() {
                             <th style="padding-top:1rem;">Time:&nbsp;</th>
                         </tr>`;
                 }
-=======
-        success: function (data) {
-            let output = `<p>My Tasks: </p>`;
-            output += `
-            <table id="tasksTable">
-                <tr style="text-align:left">
-                    <th>To complete:</th>
-                    <th>HP:&nbsp;</th>
-                    <th>Cost:&nbsp;</th>
-                    <th>Time:&nbsp;</th>
-                <tr>
-            `;
-            $(data.features).each(function () {
->>>>>>> Stashed changes
                 output += `
                     <tr>
                         <td>`+ this.properties.taskInfo.task + `</td>
