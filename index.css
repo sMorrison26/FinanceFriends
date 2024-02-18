@@ -114,4 +114,22 @@ body {
 
 .reset-button {
     position: absolute;
+    background-color: #202020;
+
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    transition-duration: 0.4s;
+    overflow: hidden;
+    outline: none;
 }
