@@ -177,7 +177,7 @@ function loadMarkers() {
             });
         },
         error: function (jqXHR, textStatus, errorThrown) {
-            console.log('Error fetching the GeoJSON data:', textStatus, errorThrown);
+            //console.log('Error fetching the GeoJSON data:', textStatus, errorThrown);
         }
     });
 }
