@@ -27,6 +27,7 @@ body {
   font-size: 1.5rem;
   margin-top: 0.8em;
   margin-bottom: 0.8em;
+  color: black;
 }
 #nav > div {
   display: flex;
@@ -45,18 +46,17 @@ body {
   border-radius: .75rem;
   font-size: medium;
   padding: 10px 20px;
+  height: fit-content;
+  margin-top: auto;
+  margin-bottom: auto;
 }
+
 /* When you hover the nav a element, make it fade it and have the color and background color swap clors */
 #nav a:hover {
     color: #202020;
     background-color: white;
     transition: all 0.25s ease;
 }
-
-/* #nav a:hover {
-  color: white;
-  background-color: #202020;
-} */
 
 #main {
   height: 100%; 
@@ -93,10 +93,8 @@ body {
 .listbullet {
   height: 2rem; 
   width: 2rem; 
-  /* margin-left: 1rem; */
 }
 #budget {
-  /* width: 40%;  */
   height: 100%; 
   color: black; 
   position: absolute;
@@ -104,9 +102,6 @@ body {
   
 }
 #budget > div, #tasks > div {
-  /* overscroll-behavior-y: contain;
-  overscroll-behavior-inline: contain;
-  overflow-y: scroll;  */
   overflow: auto; 
   margin: 1rem;
   background-color: white;
@@ -147,6 +142,10 @@ body {
     transition-duration: 0.4s;
     overflow: hidden;
     outline: none;
+}
+.table-hover:hover{
+  text-decoration: underline;
+  cursor: pointer!important;
 }
 .tasksTable {
   width: 100%;
