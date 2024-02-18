@@ -70,16 +70,31 @@ tasksdiv.innerHTML = `<div id="tasksList"></div>`;
 const budgetdiv = document.createElement('div');
 budgetdiv.id = 'budget';
 budgetdiv.innerHTML = `<div>
-<p style="display:flex;justify-content:space-between;align-items:center;"   >My Budget:           
+<p style="display:flex;justify-content:space-between;align-items:center;">My Budget: $1800           
 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="wallet">
     <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a2.25 2.25 0 0 0-2.25-2.25H15a3 3 0 1 1-6 0H5.25A2.25 2.25 0 0 0 3 12m18 0v6a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 18v-6m18 0V9M3 12V9m18 0a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 9m18 0V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v3" />
 </svg>
- 
-</p>
+ </p>
 <p>My Transactions:</p>
-<p>Remaining Balance: </p>
+<p>Remaining Balance: $1800</p>
+<p>Remaining Time: 480 min</p>
+<p>Happiness Points: 0</p>
 </div>
 `;
+function updateBudget() {
+    budgetdiv.innerHTML = `<div>
+    <p style="display:flex;justify-content:space-between;align-items:center;">My Budget: $1800          
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="wallet">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a2.25 2.25 0 0 0-2.25-2.25H15a3 3 0 1 1-6 0H5.25A2.25 2.25 0 0 0 3 12m18 0v6a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 18v-6m18 0V9M3 12V9m18 0a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 9m18 0V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v3" />
+    </svg>
+     </p>
+    <p>My Transactions:</p>
+    <p>Remaining Balance: $${budget}</p>
+    <p>Remaining Time: ${minutes} min</p>
+    <p>Happiness Points: ${utility}</p>
+    </div>
+    `;
+}
 
 // Add the divs to the map
 map.getCanvas().parentNode.appendChild(tasksdiv);
@@ -181,16 +196,23 @@ function accpeted(id){
                 else { substringUpToFirstSpace=feature.properties.name; }
                 if (id == substringUpToFirstSpace){
                     $(`#${id}`).html(`${feature.properties.taskInfo.yesMessage}`);
-                    budget += feature.properties.taskInfo.cost;
-                    minutes -= feature.properties.taskInfo.time;
-                    utility += feature.properties.taskInfo.utility;
+                    // Update the budget and time by the cost and time of the task using string to number conversion
+                    budget += parseInt(feature.properties.taskInfo.cost);
+                    console.log(budget);
+                    minutes -= parseInt(feature.properties.taskInfo.time);
+                    utility += parseInt(feature.properties.taskInfo.utility);
+                    updateBudget();
+                    console.log(feature.properties.taskInfo.cost);
+                    console.log(feature.properties.taskInfo.task);
                 }                
             });
         },
+        
         error: function(err){
             console.error(err)
         }
     })
+
 }
 
 
