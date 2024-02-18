@@ -3,57 +3,435 @@
     {
       "type": "Feature",
       "properties": {
-        "name":"First Choice Caribbean",
-        "website":"https://www.restaurantji.com/ny/troy/first-choice-caribbean-/",
-      "address":
-      {
-        "street": "451 Fulton Street",
-        "city": "Troy",
-        "state": "NY",
-        "zip": "12180"
-      },
-      "description":"Authentic Jamaican food & Caribbean vegan cuisine"
+        "name": "First Choice Caribbean",
+        "website": "https://www.restaurantji.com/ny/troy/first-choice-caribbean-/",
+        "address": {
+          "street": "451 Fulton Street",
+          "city": "Troy",
+          "state": "NY",
+          "zip": "12180"
+        },
+        "description": "Authentic Jamaican food & Caribbean vegan cuisine",
+        "taskInfo": {
+          "task":"",
+          "priority":"",
+          "cost":"",
+          "utility":"",
+          "yesMessage":"",
+          "noMessage":""
+        }
       },
       "geometry": {
-        "coordinates": [42.7321609, -73.6880956],
+        "coordinates": [
+          -73.6880956,
+          42.7321609
+        ],
         "type": "Point"
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "name":"Forever Royal Hair Studio",
-      "website":"https://l.facebook.com/l.php?u=http%3A%2F%2Fwww.foreverrhair.com%2F%3Ffbclid%3DIwAR3aDK3VG9QsB-u6hIIV8epvViWJtAPI80uPoRyVvZlthNQ1zGRJ0W1IWzQ&h=AT0REasxWJ1yV_l-x6SzZlYt-EA2Bw1kFDkEsvrw0WWJv9biuY6gUY9DdhWY5hQnXj6MyFiJ2VM5h2a7XlbkOj0iWkvkGA6S12zZ5LDf8ktyqCYNBKP7aeD3L02UwC6nDlAOlA",
-      "address":
-      {
-        "street": "150 4th Street",
-        "city": "Troy",
-        "state": "NY",
-        "zip": "12180"
-      },
-      "description":"Forever Royal Haircare provides you with natural hair products made from organic ingredient"
+        "name": "Forever Royal Hair Studio",
+        "website": "https://l.facebook.com/l.php?u=http%3A%2F%2Fwww.foreverrhair.com%2F%3Ffbclid%3DIwAR3aDK3VG9QsB-u6hIIV8epvViWJtAPI80uPoRyVvZlthNQ1zGRJ0W1IWzQ&h=AT0REasxWJ1yV_l-x6SzZlYt-EA2Bw1kFDkEsvrw0WWJv9biuY6gUY9DdhWY5hQnXj6MyFiJ2VM5h2a7XlbkOj0iWkvkGA6S12zZ5LDf8ktyqCYNBKP7aeD3L02UwC6nDlAOlA",
+        "address": {
+          "street": "150 4th Street",
+          "city": "Troy",
+          "state": "NY",
+          "zip": "12180"
+        },
+        "description": "Forever Royal Haircare provides you with natural hair products made from organic ingredient",
+        "taskInfo": {
+          "task":"",
+          "priority":"",
+          "cost":"",
+          "utility":"",
+          "yesMessage":"",
+          "noMessage":""
+        }
       },
       "geometry": {
-        "coordinates": [42.7278315, -73.6895296],
+        "coordinates": [
+          -73.6895296,
+          42.7278315
+        ],
         "type": "Point"
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "name":"Organa Food & Juice Bar",
-      "website":"www.organajuices.com",
-      "address":
-      {
-        "street": "433 River Street",
-        "city": "Troy",
-        "state": "NY",
-        "zip": "12180"
-      },
-      "description":"Located at River Street Market Fresh juices with plant based meals and Healthy snack choices."
+        "name": "Organa Food & Juice Bar",
+        "website": "www.organajuices.com",
+        "address": {
+          "street": "433 River Street",
+          "city": "Troy",
+          "state": "NY",
+          "zip": "12180"
+        },
+        "description": "Located at River Street Market Fresh juices with plant based meals and Healthy snack choices.",
+        "taskInfo": {
+          "task":"",
+          "priority":"",
+          "cost":"",
+          "utility":"",
+          "yesMessage":"",
+          "noMessage":""
+        }
       },
       "geometry": {
-        "coordinates": [42.7372578,-73.6871924],
+        "coordinates": [
+          -73.6871924,
+          42.7372578
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Riverfront Park",
+        "website": "https://www.riverexplorer.com/hudson/details.php?id=3032",
+        "address": {
+          "street": "255 Front Street",
+          "city": "Troy",
+          "state": "NY",
+          "zip": "12180"
+        },
+        "description": "Troy Riverfront Park is a 4.4 acre waterfront located in the heart of Troy, New York.",
+        "taskInfo": {
+          "task":"",
+          "priority":"",
+          "cost":"",
+          "utility":"",
+          "yesMessage":"",
+          "noMessage":""
+        }
+      },
+      "geometry": {
+        "coordinates": [
+          -73.6909623,
+          42.7331606
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "unedited",
+        "website": "https://www.riverexplorer.com/hudson/details.php?id=3032",
+        "address": {
+          "street": "255 Front Street",
+          "city": "Troy",
+          "state": "NY",
+          "zip": "12180"
+        },
+        "description": "Troy Riverfront Park is a 4.4 acre waterfront located in the heart of Troy, New York.",
+        "taskInfo": {
+          "task":"",
+          "priority":"",
+          "cost":"",
+          "utility":"",
+          "yesMessage":"",
+          "noMessage":""
+        }
+      },
+      "geometry": {
+        "coordinates": [
+          -73.6909623,
+          42.7331606
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Good Food Market",
+        "website": "https://www.capitalroots.org/good-food-market/",
+        "address": {
+          "street": "598 River Street",
+          "city": "Troy",
+          "state": "NY",
+          "zip": "12180"
+        },
+        "description": "The Good Food Market, sponsored by CDPHP, is a unique shopping experience offering farm-fresh food and goods from New York businesses at affordable prices.",
+        "taskInfo": {
+          "task":"",
+          "priority":"",
+          "cost":"",
+          "utility":"",
+          "yesMessage":"",
+          "noMessage":""
+        }
+      },
+      "geometry": {
+        "coordinates": [
+          -73.687464,
+          42.7421773
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Can Stop Redemption Center and Groceries",
+        "website": "https://www.canstopredemptioncenter.com/",
+        "address": {
+          "street": "408 Washington Street",
+          "city": "Troy",
+          "state": "NY",
+          "zip": "12180"
+        },
+        "description": "Melissa and Bill Crandall started Can Stop to do their part in making our world a 'Greener Friendly Environment' for future generations to come.",
+        "taskInfo": {
+          "task":"",
+          "priority":"",
+          "cost":"",
+          "utility":"",
+          "yesMessage":"",
+          "noMessage":""
+        }
+      },
+      "geometry": {
+        "coordinates": [
+          -73.6901533,
+          42.7244484
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hatchet Hardware of Downtown Troy",
+        "website": "https://www.facebook.com/hatchetoftroy/",
+        "address": {
+          "street": "63 3rd Street",
+          "city": "Troy",
+          "state": "NY",
+          "zip": "12180"
+        },
+        "description": "Locally owned and operated. Located in downtown Troy, New Yorks historic business district.",
+        "taskInfo": {
+          "task":"",
+          "priority":"",
+          "cost":"",
+          "utility":"",
+          "yesMessage":"",
+          "noMessage":""
+        }
+      },
+      "geometry": {
+        "coordinates": [
+          -73.6906871,
+          42.7299735
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trap Sole Kitchen",
+        "website": "https://www.facebook.com/trapsolekitchen/",
+        "address": {
+          "street": "48 4th Street",
+          "city": "Troy",
+          "state": "NY",
+          "zip": "12180"
+        },
+        "description": "Luxury Fashion Boutique located at 48 4th Street in the business district of Downtown Troy, NY",
+        "taskInfo": {
+          "task":"",
+          "priority":"",
+          "cost":"",
+          "utility":"",
+          "yesMessage":"",
+          "noMessage":""
+        }
+      },
+      "geometry": {
+        "coordinates": [
+          -73.6885413,
+          42.7319804
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Goodway Gourmet",
+        "website": "https://www.goodwaygourmetbakery.com/",
+        "address": {
+          "street": "192 9th Street",
+          "city": "Troy",
+          "state": "NY",
+          "zip": "12180"
+        },
+        "description": "Goodway Gourmet Bakery isn't just a name; it's a legacy. Established years ago in the bustling streets of Troy, New York, our bakery has been the cornerstone of many celebrations.",
+        "taskInfo": {
+          "task":"",
+          "priority":"",
+          "cost":"",
+          "utility":"",
+          "yesMessage":"",
+          "noMessage":""
+        }
+      },
+      "geometry": {
+        "coordinates": [
+          -73.6806346,
+          42.7379156
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Caprara's Auto Body",
+        "website": "https://capraras.com/",
+        "address": {
+          "street": "266 3rd Street",
+          "city": "Troy",
+          "state": "NY",
+          "zip": "12180"
+        },
+        "description": "Capraras Auto Body Shop Inc. was established in 1967 and continues to provide the highest quality collision repair service in Troy, Latham, Clifton Park and all throughout the Capital District. We have repaired all vehicle makes and models.",
+        "taskInfo": {
+          "task":"",
+          "priority":"",
+          "cost":"",
+          "utility":"",
+          "yesMessage":"",
+          "noMessage":""
+        }
+      },
+      "geometry": {
+        "coordinates": [
+          -73.6918726,
+          42.7222275
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Arts Center of the Capital Region",
+        "website": "https://www.artscenteronline.org/",
+        "address": {
+          "street": "265 River Street",
+          "city": "Troy",
+          "state": "NY",
+          "zip": "12180"
+        },
+        "description": "The mission of the Arts Center of the Capital Region is to enable people to create and engage in the arts.",
+        "taskInfo": {
+          "task":"",
+          "priority":"",
+          "cost":"",
+          "utility":"",
+          "yesMessage":"",
+          "noMessage":""
+        }
+      },
+      "geometry": {
+        "coordinates": [
+          -73.6914676,
+          42.7320477
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Troy Youth Association Inc.",
+        "website": "https://troycyo.com/",
+        "address": {
+          "street": "237 4th Street",
+          "city": "Troy",
+          "state": "NY",
+          "zip": "12180"
+        },
+        "description": "Licensed after school program serving low to moderate income families in the community. We also offer a teen program and traveling summer camp.",
+        "taskInfo": {
+          "task":"",
+          "priority":"",
+          "cost":"",
+          "utility":"",
+          "yesMessage":"",
+          "noMessage":""
+        }
+      },
+      "geometry": {
+        "coordinates": [
+          -73.6909806,
+          42.7239676
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Troy City Clerk",
+        "website": "https://www.troyny.gov/163/City-Clerk",
+        "address": {
+          "street": "433 River Street",
+          "city": "Troy",
+          "state": "NY",
+          "zip": "12180"
+        },
+        "description": "The Office of the City Clerk maintains the records of the Legislative Branch of Government and provides administrative support for the City Council.",
+        "taskInfo": {
+          "task":"",
+          "priority":"",
+          "cost":"",
+          "utility":"",
+          "yesMessage":"",
+          "noMessage":""
+        }
+      },
+      "geometry": {
+        "coordinates": [
+          -73.6871718,
+          42.7375431
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bank of America Financial Center",
+        "website": "https://locators.bankofamerica.com/ny/troy/financial-centers-troy-13634.html",
+        "address": {
+          "street": "59 3rd Street",
+          "city": "Troy",
+          "state": "NY",
+          "zip": "12180"
+        },
+        "description": "Whatever your needs, a Bank of America financial center with walk-up ATM in Troy can help. Make an appointment to speak with one of our specialists or take advantage of the many banking services our ATMs have to offer.",
+        "taskInfo": {
+          "task":"",
+          "priority":"",
+          "cost":"",
+          "utility":"",
+          "yesMessage":"",
+          "noMessage":""
+        }
+      },
+      "geometry": {
+        "coordinates": [
+          -73.6907804,
+          42.7302345
+        ],
         "type": "Point"
       }
     }
