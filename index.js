@@ -76,6 +76,7 @@ function loadMarkers() {
                 output += `<a href="${feature.properties.website}">Company Website</a>`;
                 console.log("Output: ", output);
                 const div = document.createElement('div');
+                div.id = feature.properties.name;
                 div.innerHTML = output;
                 console.log("div: ", div);
                 // Create a new popup with the div's content
