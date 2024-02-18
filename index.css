@@ -111,3 +111,7 @@ body {
   width: 33.333333%;
   height: 100%;
 }
+
+.reset-button {
+    position: absolute;
+}
