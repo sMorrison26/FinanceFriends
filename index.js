@@ -80,7 +80,6 @@ budgetdiv.innerHTML = `
 map.getCanvas().parentNode.appendChild(tasksdiv);
 map.getCanvas().parentNode.appendChild(budgetdiv);
 map.getCanvas().parentNode.appendChild(resetButton);
-map.getCanvas().parentNode.appendChild(navdiv);
 
 function loadMarkers() {
     $.ajax({
