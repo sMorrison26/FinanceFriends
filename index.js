@@ -38,15 +38,15 @@ map.on('click', (event) => {
 
 });
 
-function addMarker() {
-    const popup = new mapboxgl.Popup({ offset: [0, -15] })
-        .setLngLat([-87.637596, 41.940403])
-        .setHTML(
-            `<h3>Lincoln Park</h3><p>A northside park that is home to the Lincoln Park Zoo</p><h3>Lincoln Park</h3><p>A northside park that is home to the Lincoln Park Zoo</p><h3>Lincoln Park</h3><p>A northside park that is home to the Lincoln Park Zoo</p><h3>Lincoln Park</h3><p>A northside park that is home to the Lincoln Park Zoo</p><h3>Lincoln Park</h3><p>A northside park that is home to the Lincoln Park Zoo</p><h3>Lincoln Park</h3><p>A northside park that is home to the Lincoln Park Zoo</p>`
+// function addMarker() {
+//     const popup = new mapboxgl.Popup({ offset: [0, -15] })
+//         .setLngLat([-87.637596, 41.940403])
+//         .setHTML(
+//             `<h3>Lincoln Park</h3><p>A northside park that is home to the Lincoln Park Zoo</p><h3>Lincoln Park</h3><p>A northside park that is home to the Lincoln Park Zoo</p><h3>Lincoln Park</h3><p>A northside park that is home to the Lincoln Park Zoo</p><h3>Lincoln Park</h3><p>A northside park that is home to the Lincoln Park Zoo</p><h3>Lincoln Park</h3><p>A northside park that is home to the Lincoln Park Zoo</p><h3>Lincoln Park</h3><p>A northside park that is home to the Lincoln Park Zoo</p>`
 
-        )
-        .addTo(map);
-}
+//         )
+//         .addTo(map);
+// }
 // Make a button at the top right of the map that recenters the map camera to the coordinates given in the start of this file
 const resetButton = document.createElement('button');
 resetButton.textContent = 'Reset';
