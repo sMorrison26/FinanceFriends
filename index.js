@@ -1,5 +1,6 @@
 var budget = 1800;
 var minutes = 480;
+var utility = 0;
 $(document).ready(function () {
 
     getBusinesses();
@@ -130,6 +131,7 @@ $(document).ready(async function () {
         let id = this.id; // Get the id of the clicked element
         id = id.substring(2);
         $(`#${id}`).html('');
+        accpeted(id);
     });
     $(document).on('click', '.noButton', function () {
         let id = this.id; // Get the id of the clicked element
@@ -154,6 +156,31 @@ function denied(id){
                 else { substringUpToFirstSpace=feature.properties.name; }
                 if (id == substringUpToFirstSpace){
                     $(`#${id}`).html(`${feature.properties.taskInfo.noMessage}`);
+                }                
+            });
+        },
+        error: function(err){
+            console.error(err)
+        }
+    })
+}
+
+function accpeted(id){
+    $.ajax({
+        type: 'GET',
+        url: './businesses.geojson',
+        dataType: 'json',
+        success: function(data){
+            $(`#${id}`).html(`<p>${data.feat}`);
+            data.features.forEach(feature => {
+                let firstSpaceIndex = (feature.properties.name).indexOf(' '); // Find the index of the first space
+                var substringUpToFirstSpace = '';
+                // Check if there's a space in the string
+                if (firstSpaceIndex !== -1) { substringUpToFirstSpace = (feature.properties.name).substring(0, firstSpaceIndex); }
+                else { substringUpToFirstSpace=feature.properties.name; }
+                if (id == substringUpToFirstSpace){
+                    $(`#${id}`).html(`${feature.properties.taskInfo.yesMessage}`);
+                    
                 }                
             });
         },
