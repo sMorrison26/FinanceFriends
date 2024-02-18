@@ -5,6 +5,7 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+
 }
 
 #nav > #logo {
@@ -323,9 +324,14 @@ body {
 }
 
 #main-resources {
+  background-color: #eff6f8;
   margin-top: 3%;
   margin-right: 5%;
   margin-left: 5%;
+  height: 100%;
+  padding: 10px 30px 0 30px;
+  box-shadow: 4px 4px 10px lightgray;
+  border-radius: 1rem;
 
 }
 
