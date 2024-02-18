@@ -7,7 +7,6 @@
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
     <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v3.1.0/mapbox-gl.js"></script>
     <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v3.1.0/mapbox-gl.css" rel="stylesheet" />
-    <script src="./jquery-3.7.1.min.js"></script>
 
   </head>
   <body>
@@ -19,7 +18,7 @@
         <a href="./about.html">About</a>
       </div>
     </nav>
-    <main id="main" className="h-full bg-white">
+    <main id="main">
       <div class="bar">
         <div class="icon-container">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="wallet">
@@ -36,16 +35,16 @@
       </div>
       <div class="content">
         <div id="budget" >
-          <div className="m-4 bg-white rounded-xl h-4/5 p-4 shadow-xl">
-            <p className="text-3xl font-medium">My Budget: </p>
-            <p className="text-2xl font-medium">My Transactions:</p>
-            <p className="text-2xl font-medium">Remaining Balance: </p>
+          <div>
+            <p>My Budget: </p>
+            <p>My Transactions:</p>
+            <p>Remaining Balance: </p>
           </div>
         </div>
         <div id="map"></div>
         <div id="tasks">
-          <div id="tasksList" className="m-4 bg-white rounded-xl h-4/5 p-4 shadow-xl">
-            <p className="text-3xl font-medium">My Tasks: </p>
+          <div id="tasksList">
+            <p>My Tasks: </p>
           </div>
         </div> 
       </div>
