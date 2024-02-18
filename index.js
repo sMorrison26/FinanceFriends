@@ -41,18 +41,8 @@ map.on('click', (event) => {
 
 });
 
-// function addMarker() {
-//     const popup = new mapboxgl.Popup({ offset: [0, -15] })
-//         .setLngLat([-87.637596, 41.940403])
-//         .setHTML(
-//             `<h3>Lincoln Park</h3><p>A northside park that is home to the Lincoln Park Zoo</p><h3>Lincoln Park</h3><p>A northside park that is home to the Lincoln Park Zoo</p><h3>Lincoln Park</h3><p>A northside park that is home to the Lincoln Park Zoo</p><h3>Lincoln Park</h3><p>A northside park that is home to the Lincoln Park Zoo</p><h3>Lincoln Park</h3><p>A northside park that is home to the Lincoln Park Zoo</p><h3>Lincoln Park</h3><p>A northside park that is home to the Lincoln Park Zoo</p>`
-
-//         )
-//         .addTo(map);
-// }
-// Make a button at the top right of the map that recenters the map camera to the coordinates given in the start of this file
 const resetButton = document.createElement('button');
-resetButton.textContent = 'Reset';
+resetButton.textContent = 'Reset View';
 resetButton.className = 'reset-button';
 resetButton.onclick = function () {
     map.flyTo({
@@ -62,6 +52,45 @@ resetButton.onclick = function () {
         bearing: 125
     });
 };
+
+const endDay = document.createElement('button');
+endDay.textContent = 'End Day';
+endDay.className = 'endday';
+endDay.onclick = function () {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "block";
+    const modalContent = document.getElementsByClassName("modal-content")[0];
+    var Happiness_outcome;
+    var Budget_outcome;
+    if(budget < 200){
+        Budget_outcome = `You saved ${budget} this month, keep it up to try and save more next month!`;
+    }
+    else{
+        Budget_outcome = `You saved ${budget} this month, you're doing a great job saving money for the future!`;
+    }  
+    if(utility <= 120 && budget < 200){
+        Happiness_outcome = "You did a good job keeping your necessities in check!";
+    }
+    else if(utility < 110 && budget > 200){
+        Happiness_outcome = "You may want to spend some of your hard earned dough on something fun!";
+    }
+    else{
+        Happiness_outcome = "You did a good job keeping yourself happy, but you may want to make sure you're saving enough money for the future!";
+    }
+    modalContent.innerHTML = `
+    <h2>Day End</h2>
+    <h3>Final Stats:</h3>
+    <p>Remaining Budget: $${budget}</p>
+    <p>Remaining Time: ${minutes} min</p>
+    <p>Happiness Points: ${utility}</p>
+    <h3>Outcomes</h3>
+    <p>${Budget_outcome}</p>
+    <p>${Happiness_outcome}</p>
+    <button id="closeModal" onclick="location.reload()">Close</button>
+    `;
+
+};
+
 
 // Create a div to hold the tasks list
 const tasksdiv = document.createElement('div');
@@ -77,30 +106,14 @@ budgetdiv.innerHTML = `<div>
     <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a2.25 2.25 0 0 0-2.25-2.25H15a3 3 0 1 1-6 0H5.25A2.25 2.25 0 0 0 3 12m18 0v6a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 18v-6m18 0V9M3 12V9m18 0a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 9m18 0V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v3" />
 </svg>
  </p>
- <div id="budgetHistory">
- </div>
 <p>My Transactions:</p>
+<div id="budgetHistory">
+ </div>
 <p id="racks">Remaining Balance: $1800</p>
 <p id="motion">Remaining Time: 480 min</p>
 <p id="swag">Happiness Points: 0</p>
 </div>
 `;
-// function updateBudget() {
-//     budgetdiv.innerHTML = `<div>
-//     <p style="display:flex;justify-content:space-between;align-items:center;">My Budget: $1800          
-//     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="wallet">
-//         <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a2.25 2.25 0 0 0-2.25-2.25H15a3 3 0 1 1-6 0H5.25A2.25 2.25 0 0 0 3 12m18 0v6a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 18v-6m18 0V9M3 12V9m18 0a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 9m18 0V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v3" />
-//     </svg>
-//      </p>
-//     <p>My Transactions:</p>
-//     <div id="budgetHistory">
-//     </div>
-//     <p>Remaining Balance: $${budget}</p>
-//     <p>Remaining Time: ${minutes} min</p>
-//     <p>Happiness Points: ${utility}</p>
-//     </div>
-//     `;
-// }
 
 function updateBudgetHistory(cost, task) {
     let value = parseInt(cost);
@@ -127,6 +140,7 @@ function updateBudgetHistory(cost, task) {
 map.getCanvas().parentNode.appendChild(tasksdiv);
 map.getCanvas().parentNode.appendChild(budgetdiv);
 map.getCanvas().parentNode.appendChild(resetButton);
+map.getCanvas().parentNode.appendChild(endDay);
 
 function loadMarkers() {
     $.ajax({
