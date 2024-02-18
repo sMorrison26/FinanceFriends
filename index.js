@@ -281,7 +281,7 @@ function getBusinesses() {
                     if (i == 5) output += `Want to Do:`
                     if (i == 11) output += `Ways to Earn:`
                     output += `</th>
-                            <th style="padding-top:1rem;">HP:&nbsp;</th>
+                            <th style="padding-top:1rem;">*HP:&nbsp;</th>
                             <th style="padding-top:1rem;">Cost:&nbsp;</th>
                             <th style="padding-top:1rem;">Time:&nbsp;</th>
                         </tr>`;
@@ -297,7 +297,8 @@ function getBusinesses() {
                 `;
                 i++;
             });
-            output += `</table>`
+            output += `</table>`;
+            output += `<h3>*HP = Happiness Points (its important to do what you need to, and what makes you happy too)</h3>`
             $("#tasksList").html(output);
         },
 
