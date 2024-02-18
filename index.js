@@ -62,19 +62,19 @@ endDay.onclick = function () {
     const modalContent = document.getElementsByClassName("modal-content")[0];
     var Happiness_outcome;
     var Budget_outcome;
-    if(budget < 200){
+    if (budget < 200) {
         Budget_outcome = `You saved ${budget} this month, keep it up to try and save more next month!`;
     }
-    else{
+    else {
         Budget_outcome = `You saved ${budget} this month, you're doing a great job saving money for the future!`;
-    }  
-    if(utility <= 120 && budget < 200){
+    }
+    if (utility <= 120 && budget < 200) {
         Happiness_outcome = "You did a good job keeping your necessities in check!";
     }
-    else if(utility < 110 && budget > 200){
+    else if (utility < 110 && budget > 200) {
         Happiness_outcome = "You may want to spend some of your hard earned dough on something fun!";
     }
-    else{
+    else {
         Happiness_outcome = "You did a good job keeping yourself happy, but you may want to make sure you're saving enough money for the future!";
     }
     modalContent.innerHTML = `
@@ -117,7 +117,6 @@ budgetdiv.innerHTML = `<div>
 
 function updateBudgetHistory(cost, task) {
     let value = parseInt(cost);
-    const budgetHistory = document.getElementById('budgetHistory'); // Fix: Replace 'budgetHisotry' with 'budgetHistory'
     const transaction = document.createElement('div');
     transaction.className = 'budgetHistoryTransaction';
     if (value > 0) {
@@ -127,13 +126,10 @@ function updateBudgetHistory(cost, task) {
         transaction.innerHTML = `<p class="budgetHistoryTask">${task}</p><p class="negative">$${value}</p>`;
     }
     console.log(transaction);
-    budgetHistory.appendChild(transaction);
-    const racks = document.getElementById('racks');
-    const motion = document.getElementById('motion');
-    const swag = document.getElementById('swag');
-    racks.innerHTML = `Remaining Balance: $${budget}`;
-    motion.innerHTML = `Remaining Time: ${minutes} min`;
-    swag.innerHTML = `Happiness Points: ${utility}`;
+    $('#budgetHistory').append(transaction);
+    $('#racks').html(`Remaining Balance: $${budget}`);
+    $('#motion').html(`Remaining Time: ${minutes} min`);
+    $('#swag').html(`Happiness Points: ${utility}`);
 }
 
 // Add the divs to the map
@@ -243,11 +239,11 @@ function accpeted(id) {
                     updateBudgetHistory(feature.properties.taskInfo.cost, feature.properties.taskInfo.task);
                     console.log(feature.properties.taskInfo.cost);
                     console.log(feature.properties.taskInfo.task);
-                }                
+                }
             });
         },
-        
-        error: function(err){
+
+        error: function (err) {
             console.error(err)
         }
     })
