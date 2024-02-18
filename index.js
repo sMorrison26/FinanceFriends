@@ -7,7 +7,6 @@ let markers = {}; // Object to store your markers by their unique IDs
 $(document).ready(function () {
     getBusinesses();
     $("#logo").click(function() {
-        console.log('hi');
         window.location.href="./index.html";
     })
 })
@@ -133,7 +132,7 @@ function updateBudgetHistory(cost, task) {
     else {
         transaction.innerHTML = `<p class="budgetHistoryTask">${task}</p><p class="negative">$${value}</p>`;
     }
-    console.log(transaction);
+
     $('#budgetHistory').append(transaction);
     $('#racks').html(`Remaining Balance: $${budget}`);
     $('#motion').html(`Remaining Time: ${minutes} min`);
@@ -171,8 +170,6 @@ function loadMarkers() {
                 const div = document.createElement('div');
                 div.innerHTML = output;
                 const popup = new mapboxgl.Popup().setDOMContent(div);
-                console.log("My name is: ",feature.properties.name);
-                console.log("My task div id is: ",feature.properties.name.replace(/ /g, ""))
                 markers[feature.properties.name.replace(/ /g, "_")] = new mapboxgl.Marker()
                     .setLngLat(feature.geometry.coordinates)
                     .setPopup(popup) // sets a popup on this marker
@@ -184,13 +181,11 @@ function loadMarkers() {
         }
     });
 }
-//onclick="console.log(this.id);
 $(document).ready(async function () {
     loadMarkers();
     $(document).on('click', '.yesButton', function () {
         let id = this.id; // Get the id of the clicked element
         id = id.substring(2);
-        console.log('My id is: ',id)
         $(`#${id}`).html('');
         accpeted(id);
     });
@@ -318,16 +313,10 @@ function getBusinesses() {
 }
 
 function openPin(element, coords) {
-    let id = element.id.substring(5); // Extract the correct part of the ID
-    console.log("IDs", id);
+    let id = element.id.substring(5); // Extract the correct part of the ID;
     // Check if the targeted marker exists and toggle its popup
     if (markers.hasOwnProperty(id)) {
-        // console.log("Attempting to toggle popup for marker ID:", id);
-        // console.log("Marker:", markers[id]);
-        // console.log("Popup:", markers[id].getPopup());
         markers[id].togglePopup();
-    } else {
-        console.log("No marker found for ID:", id);
     }
     // Assuming you have a MapboxGL map object called 'map' and coordinates 
     // Convert string coordinates to numbers and fly to them
@@ -338,10 +327,15 @@ function openPin(element, coords) {
         pitch: 65,
         bearing: 125
     });
-    //wait one second
+    //wait untill after fly
+    
     setTimeout(() => {
         //simulate a click on the marker
         click(863, 510);
+        var width = window.innerWidth / 2;
+        var height = window.innerHeight / 2;
+        console.log(width);
+        console.log(height);
     }, 2000);
 
 }
@@ -352,8 +346,8 @@ function click(x, y)
         'view': window,
         'bubbles': true,
         'cancelable': true,
-        'screenX': x,
-        'screenY': y
+        'clientX': x,
+        'clientY': y
     });
 
     var el = document.elementFromPoint(x, y);
