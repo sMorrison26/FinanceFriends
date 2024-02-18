@@ -37,3 +37,18 @@ function addMarker() {
         )
         .addTo(map);
 }
+// Make a button at the top right of the map that recenters the map camera to the coordinates given in the start of this file
+const resetButton = document.createElement('button');
+resetButton.textContent = 'Reset';
+resetButton.className = 'reset-button';
+resetButton.onclick = function () {
+    map.flyTo({
+        center: [-73.691482, 42.732983],
+        zoom: 16,
+        pitch: 65,
+        bearing: 125
+    });
+};
+map.getCanvas().parentNode.appendChild(resetButton);
+
+
