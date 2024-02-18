@@ -186,7 +186,7 @@ function loadMarkers() {
 }
 //onclick="console.log(this.id);
 $(document).ready(async function () {
-    await loadMarkers();
+    loadMarkers();
     $(document).on('click', '.yesButton', function () {
         let id = this.id; // Get the id of the clicked element
         id = id.substring(2);
@@ -232,15 +232,23 @@ function accpeted(id) {
             $(`#${id}`).html(`<p>${data.feat}`);
             data.features.forEach(feature => {
                 if (id == feature.properties.name.replace(/ /g, "")) {
-                    $(`#${id}`).html(`${feature.properties.taskInfo.yesMessage}`);
                     // Update the budget and time by the cost and time of the task using string to number conversion
-                    budget += parseInt(feature.properties.taskInfo.cost);
-                    console.log(budget);
-                    minutes -= parseInt(feature.properties.taskInfo.time);
-                    utility += parseInt(feature.properties.taskInfo.utility);
-                    updateBudgetHistory(feature.properties.taskInfo.cost, feature.properties.taskInfo.task);
-                    console.log(feature.properties.taskInfo.cost);
-                    console.log(feature.properties.taskInfo.task);
+                    if (0 > budget + parseInt(feature.properties.taskInfo.cost) && 0 > minutes - parseInt(feature.properties.taskInfo.time)) {
+                        $(`#${id}`).html(`<p>You dont have the budget or the time for that!</p>`);
+                    }
+                    else if(0 > budget + parseInt(feature.properties.taskInfo.cost)) {
+                        $(`#${id}`).html(`<p>You dont have the budget for that!</p>`);
+                    }
+                    else if(0 > minutes - parseInt(feature.properties.taskInfo.time)) {
+                        $(`#${id}`).html(`<p>You dont have the budget or the time for that!</p>`);
+                    }
+                    else {
+                        budget += parseInt(feature.properties.taskInfo.cost);
+                        minutes -= parseInt(feature.properties.taskInfo.time);
+                        utility += parseInt(feature.properties.taskInfo.utility);
+                        $(`#${id}`).html(`${feature.properties.taskInfo.yesMessage}`);
+                        updateBudgetHistory(feature.properties.taskInfo.cost, feature.properties.taskInfo.task);
+                    }
                 }
             });
         },
