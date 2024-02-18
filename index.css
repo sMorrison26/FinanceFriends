@@ -29,7 +29,7 @@ body {
 #nav > div {
   display: flex;
   justify-content: space-between;
-  width: 33.333333%; 
+  width: 25%; 
 }
 #nav a {
   font-size: 1.25rem;
@@ -137,8 +137,9 @@ body {
     overflow: hidden;
     outline: none;
 }
-#tasksTable {
+.tasksTable {
   width: 100%;
+  margin-bottom: 2rem;
 }
 #tasksList {
     box-shadow: 0 100px 20px black;
