@@ -226,7 +226,7 @@ function getBusinesses() {
                 let coords = this.geometry.coordinates[0]+"_"+this.geometry.coordinates[1];
                 output += `
                     <tr>
-                        <td id="task-`+this.properties.name.replace(/ /g,"_")+`" class="table-hover" onclick='openPin("`+coords+`");'>`+this.properties.taskInfo.task+`</td>
+                        <td id="task-`+this.properties.name.replace(/ /g,"_")+`" class="table-hover" onclick='openPin(this,"`+coords+`");'>`+this.properties.taskInfo.task+`</td>
                         <td>`+this.properties.taskInfo.utility+`</td>
                         <td>`+this.properties.taskInfo.cost+`</td>
                         <td>`+this.properties.taskInfo.time+`</td>
@@ -243,9 +243,12 @@ function getBusinesses() {
     })
 }
 
-function openPin(coords){
+function openPin(element,coords){
+    let id = element.id.substring(5);
     console.log(coords)
+    console.log(id)
     let arr = coords.split("_")
+    $("#"+id).click();
     map.flyTo({
         center: arr,
         zoom: 17,
