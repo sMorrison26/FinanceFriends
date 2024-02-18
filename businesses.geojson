@@ -13,50 +13,17 @@
         },
         "description": "The Good Food Market, sponsored by CDPHP, is a unique shopping experience offering farm-fresh food and goods from New York businesses at affordable prices.",
         "taskInfo": {
-          "task":"Grocery Shopping",
-          "priority":"Need",
-          "cost":"-50",
-          "utility":"10",
-          "time":"1hr",
-          "yesMessage":"Nice! You got groceries to make healthy meals for the week.",
-          "noMessage":"It's ok, you'll have to find food some other way this week."
+          "task": "Grocery Shopping",
+          "priority": "Need",
+          "cost": "-50",
+          "utility": "10",
+          "time": "1hr",
+          "yesMessage": "Nice! You got groceries to make healthy meals for the week.",
+          "noMessage": "It's ok, you'll have to find food some other way this week."
         }
       },
       "geometry": {
-        "coordinates": [
-          -73.687464,
-          42.7421773
-        ],
-        "type": "Point"
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Goodway Gourmet",
-        "website": "https://www.goodwaygourmetbakery.com/",
-        "address": {
-          "street": "192 9th Street",
-          "city": "Troy",
-          "state": "NY",
-          "zip": "12180"
-        },
-        "description": "Goodway Gourmet Bakery isn't just a name; it's a legacy. Established years ago in the bustling streets of Troy, New York, our bakery has been the cornerstone of many celebrations.",
-        "taskInfo": {
-          "task":"Get a Treat",
-          "priority":"Want",
-          "cost":"-10",
-          "utility":"10",
-          "time":".5hr",
-          "yesMessage":"Nice! You got a yummy slice of cake.",
-          "noMessage":"It's ok, you have some treats at home."
-        }
-      },
-      "geometry": {
-        "coordinates": [
-          -73.6806346,
-          42.7379156
-        ],
+        "coordinates": [-73.687464, 42.7421773],
         "type": "Point"
       }
     },
@@ -73,110 +40,17 @@
         },
         "description": "The Office of the City Clerk maintains the records of the Legislative Branch of Government and provides administrative support for the City Council.",
         "taskInfo": {
-          "task":"Pay Bills",
-          "priority":"Need",
-          "cost":"-500",
-          "utility":"0",
-          "time":"1hr",
-          "yesMessage":"Nice! You paid your bills and can rest easy for the month.",
-          "noMessage":"It's ok, hopefully they don't shut off the heat."
+          "task": "Pay Bills",
+          "priority": "Need",
+          "cost": "-500",
+          "utility": "0",
+          "time": "1hr",
+          "yesMessage": "Nice! You paid your bills and can rest easy for the month.",
+          "noMessage": "It's ok, hopefully they don't shut off the heat."
         }
       },
       "geometry": {
-        "coordinates": [
-          -73.6871718,
-          42.7375431
-        ],
-        "type": "Point"
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Organa Food & Juice Bar",
-        "website": "www.organajuices.com",
-        "address": {
-          "street": "433 River Street",
-          "city": "Troy",
-          "state": "NY",
-          "zip": "12180"
-        },
-        "description": "Located at River Street Market Fresh juices with plant based meals and healthy snack choices.",
-        "taskInfo": {
-          "task":"Cafe with Friends",
-          "priority":"Want",
-          "cost":"-20",
-          "utility":"20",
-          "time":"1hr",
-          "yesMessage":"Nice! You enjoyed a yummy treat with friends.",
-          "noMessage":"It's ok, you'll see your friends another day."
-        }
-      },
-      "geometry": {
-        "coordinates": [
-          -73.6871924,
-          42.7372578
-        ],
-        "type": "Point"
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Riverfront Park",
-        "website": "https://www.riverexplorer.com/hudson/details.php?id=3032",
-        "address": {
-          "street": "255 Front Street",
-          "city": "Troy",
-          "state": "NY",
-          "zip": "12180"
-        },
-        "description": "Troy Riverfront Park is a 4.4 acre waterfront located in the heart of Troy, New York.",
-        "taskInfo": {
-          "task":"Walk Neighborhood Dogs",
-          "priority":"Earn",
-          "cost":"+50",
-          "utility":"10",
-          "time":"2hr",
-          "yesMessage":"Nice! You had a nice walk and earned some extra cash!",
-          "noMessage":"It's ok, you can always walk the dogs another day."
-        }
-      },
-      "geometry": {
-        "coordinates": [
-          -73.6909623,
-          42.7331606
-        ],
-        "type": "Point"
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Arts Center of the Capital Region",
-        "website": "https://www.artscenteronline.org/",
-        "address": {
-          "street": "265 River Street",
-          "city": "Troy",
-          "state": "NY",
-          "zip": "12180"
-        },
-        "description": "The mission of the Arts Center of the Capital Region is to enable people to create and engage in the arts.",
-        "taskInfo": {
-          "task":"Take a Class",
-          "priority":"Want",
-          "cost":"-50",
-          "utility":"50",
-          "time":"2hr",
-          "yesMessage":"Nice! You took a fun dance class and learned some new moves.",
-          "noMessage":"It's ok, you can always learn to dance from YouTube."
-        }
-      },
-      "geometry": {
-        "coordinates": [
-          -73.6914676,
-          42.7320477
-        ],
+        "coordinates": [-73.6871718, 42.7375431],
         "type": "Point"
       }
     },
@@ -193,20 +67,17 @@
         },
         "description": "Whatever your needs, a Bank of America financial center with walk-up ATM in Troy can help. Make an appointment to speak with one of our specialists or take advantage of the many banking services our ATMs have to offer.",
         "taskInfo": {
-          "task":"Pay Rent",
-          "priority":"Need",
-          "cost":"-1000",
-          "utility":"0",
-          "time":".5hr",
-          "yesMessage":"Nice! You paid your rent and can rest easy for the month.",
-          "noMessage":"It's ok, hopefully your landlord won't kick you out."
+          "task": "Pay Rent",
+          "priority": "Need",
+          "cost": "-1000",
+          "utility": "0",
+          "time": ".5hr",
+          "yesMessage": "Nice! You paid your rent and can rest easy for the month.",
+          "noMessage": "It's ok, hopefully your landlord won't kick you out."
         }
       },
       "geometry": {
-        "coordinates": [
-          -73.6907804,
-          42.7302345
-        ],
+        "coordinates": [-73.6907804, 42.7302345],
         "type": "Point"
       }
     },
@@ -223,50 +94,125 @@
         },
         "description": "Locally owned and operated. Located in downtown Troy, New Yorks historic business district.",
         "taskInfo": {
-          "task":"Buy Home Supplies",
-          "priority":"Need",
-          "cost":"-50",
-          "utility":"0",
-          "time":".5hr",
-          "yesMessage":"Nice! You got some supplies so you can finally fix your sink.",
-          "noMessage":"It's ok, you'll just fix your sink another time."
+          "task": "Buy Home Supplies",
+          "priority": "Need",
+          "cost": "-50",
+          "utility": "0",
+          "time": ".5hr",
+          "yesMessage": "Nice! You got some supplies so you can finally fix your sink.",
+          "noMessage": "It's ok, you'll just fix your sink another time."
         }
       },
       "geometry": {
-        "coordinates": [
-          -73.6906871,
-          42.7299735
-        ],
+        "coordinates": [-73.6906871, 42.7299735],
         "type": "Point"
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "name": "Troy Threads",
-        "website": "https://troythreads.com/",
+        "name": "Caprara's Auto Body",
+        "website": "https://capraras.com/",
         "address": {
-          "street": "272 River Street",
+          "street": "266 3rd Street",
           "city": "Troy",
           "state": "NY",
           "zip": "12180"
         },
-        "description": "Locally owned boutique and consignment shop offering the latest trends at affordable prices.",
+        "description": "Capraras Auto Body Shop Inc. was established in 1967 and continues to provide the highest quality collision repair. We have repaired all vehicle makes and models.",
         "taskInfo": {
-          "task":"Resell Old Clothes",
-          "priority":"Earn",
-          "cost":"+50",
-          "utility":"0",
-          "time":"1hr",
-          "yesMessage":"Nice! You helped the environment, and earned some extra cash.",
-          "noMessage":"It's ok, you'll save your clothes for next season."
+          "task": "Oil Change and Gas",
+          "priority": "Need",
+          "cost": "-50",
+          "utility": "0",
+          "time": "1hr",
+          "yesMessage": "Nice! You took care of your car and got gas for the week.",
+          "noMessage": "It's ok, maybe you'll ride your bike this week instead."
         }
       },
       "geometry": {
-        "coordinates": [
-          -73.6901533,
-          42.7244484
-        ],
+        "coordinates": [-73.6918726, 42.7222275],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Goodway Gourmet",
+        "website": "https://www.goodwaygourmetbakery.com/",
+        "address": {
+          "street": "192 9th Street",
+          "city": "Troy",
+          "state": "NY",
+          "zip": "12180"
+        },
+        "description": "Goodway Gourmet Bakery isn't just a name; it's a legacy. Established years ago in the bustling streets of Troy, New York, our bakery has been the cornerstone of many celebrations.",
+        "taskInfo": {
+          "task": "Get a Treat",
+          "priority": "Want",
+          "cost": "-10",
+          "utility": "10",
+          "time": ".5hr",
+          "yesMessage": "Nice! You got a yummy slice of cake.",
+          "noMessage": "It's ok, you have some treats at home."
+        }
+      },
+      "geometry": {
+        "coordinates": [-73.6806346, 42.7379156],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Organa Food & Juice Bar",
+        "website": "www.organajuices.com",
+        "address": {
+          "street": "433 River Street",
+          "city": "Troy",
+          "state": "NY",
+          "zip": "12180"
+        },
+        "description": "Located at River Street Market Fresh juices with plant based meals and healthy snack choices.",
+        "taskInfo": {
+          "task": "Cafe with Friends",
+          "priority": "Want",
+          "cost": "-20",
+          "utility": "20",
+          "time": "1hr",
+          "yesMessage": "Nice! You enjoyed a yummy treat with friends.",
+          "noMessage": "It's ok, you'll see your friends another day."
+        }
+      },
+      "geometry": {
+        "coordinates": [-73.6871924, 42.7372578],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Arts Center of the Capital Region",
+        "website": "https://www.artscenteronline.org/",
+        "address": {
+          "street": "265 River Street",
+          "city": "Troy",
+          "state": "NY",
+          "zip": "12180"
+        },
+        "description": "The mission of the Arts Center of the Capital Region is to enable people to create and engage in the arts.",
+        "taskInfo": {
+          "task": "Take a Class",
+          "priority": "Want",
+          "cost": "-50",
+          "utility": "50",
+          "time": "2hr",
+          "yesMessage": "Nice! You took a fun dance class and learned some new moves.",
+          "noMessage": "It's ok, you can always learn to dance from YouTube."
+        }
+      },
+      "geometry": {
+        "coordinates": [-73.6914676, 42.7320477],
         "type": "Point"
       }
     },
@@ -283,20 +229,17 @@
         },
         "description": "Luxury Fashion Boutique located in the business district of Downtown Troy, NY",
         "taskInfo": {
-          "task":"New Shoes",
-          "priority":"Want",
-          "cost":"-100",
-          "utility":"50",
-          "time":".5hr",
-          "yesMessage":"Nice! You got some cool new kicks.",
-          "noMessage":"It's ok, you'll ask for new shoes for your birthday."
+          "task": "New Shoes",
+          "priority": "Want",
+          "cost": "-100",
+          "utility": "50",
+          "time": ".5hr",
+          "yesMessage": "Nice! You got some cool new kicks.",
+          "noMessage": "It's ok, you'll ask for new shoes for your birthday."
         }
       },
       "geometry": {
-        "coordinates": [
-          -73.6885413,
-          42.7319804
-        ],
+        "coordinates": [-73.6885413, 42.7319804],
         "type": "Point"
       }
     },
@@ -313,20 +256,17 @@
         },
         "description": "Authentic Jamaican food & Caribbean vegan cuisine",
         "taskInfo": {
-          "task":"Go Out to Eat",
-          "priority":"Want",
-          "cost":"-20",
-          "utility":"20",
-          "time":"1hr",
-          "yesMessage":"Nice! You're full, but you're down $20.",
-          "noMessage":"It's ok, you'll cook dinner at home tonight."
+          "task": "Go Out to Eat",
+          "priority": "Want",
+          "cost": "-20",
+          "utility": "20",
+          "time": "1hr",
+          "yesMessage": "Nice! You're full, but you're down $20.",
+          "noMessage": "It's ok, you'll cook dinner at home tonight."
         }
       },
       "geometry": {
-        "coordinates": [
-          -73.6880956,
-          42.7321609
-        ],
+        "coordinates": [-73.6880956, 42.7321609],
         "type": "Point"
       }
     },
@@ -343,81 +283,44 @@
         },
         "description": "Forever Royal Haircare provides you with natural hair products made from organic ingredients.",
         "taskInfo": {
-          "task":"Hair Appointment",
-          "priority":"Want",
-          "cost":"-30",
-          "utility":"30",
-          "time":"2hr",
-          "yesMessage":"Nice! You got a fresh style, but now you're down $30.",
-          "noMessage":"It's ok, you'll wait until next month for a new style, but you saved some cash."
+          "task": "Hair Appointment",
+          "priority": "Want",
+          "cost": "-30",
+          "utility": "30",
+          "time": "2hr",
+          "yesMessage": "Nice! You got a fresh style, but now you're down $30.",
+          "noMessage": "It's ok, you'll wait until next month for a new style, but you saved some cash."
         }
       },
       "geometry": {
-        "coordinates": [
-          -73.6895296,
-          42.7278315
-        ],
+        "coordinates": [-73.6895296, 42.7278315],
         "type": "Point"
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "name": "Can Stop Redemption Center and Groceries",
-        "website": "https://www.canstopredemptioncenter.com/",
+        "name": "Troy Threads",
+        "website": "https://troythreads.com/",
         "address": {
-          "street": "408 Washington Street",
+          "street": "272 River Street",
           "city": "Troy",
           "state": "NY",
           "zip": "12180"
         },
-        "description": "Melissa and Bill Crandall started Can Stop to do their part in making our world a 'Greener Friendly Environment' for future generations to come.",
+        "description": "Locally owned boutique and consignment shop offering the latest trends at affordable prices.",
         "taskInfo": {
-          "task":"Bottle Return",
-          "priority":"Earn",
-          "cost":"+5",
-          "utility":"10",
-          "time":".5hr",
-          "yesMessage":"Nice! You helped the environment, and earned some extra cash.",
-          "noMessage":"It's ok, you'll save your bottle for next time."
+          "task": "Resell Old Clothes",
+          "priority": "Earn",
+          "cost": "+50",
+          "utility": "0",
+          "time": "1hr",
+          "yesMessage": "Nice! You helped the environment, and earned some extra cash.",
+          "noMessage": "It's ok, you'll save your clothes for next season."
         }
       },
       "geometry": {
-        "coordinates": [
-          -73.6901533,
-          42.7244484
-        ],
-        "type": "Point"
-      }
-    },
-
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Caprara's Auto Body",
-        "website": "https://capraras.com/",
-        "address": {
-          "street": "266 3rd Street",
-          "city": "Troy",
-          "state": "NY",
-          "zip": "12180"
-        },
-        "description": "Capraras Auto Body Shop Inc. was established in 1967 and continues to provide the highest quality collision repair. We have repaired all vehicle makes and models.",
-        "taskInfo": {
-          "task":"Oil Change and Gas",
-          "priority":"Need",
-          "cost":"-50",
-          "utility":"0",
-          "time":"1hr",
-          "yesMessage":"Nice! You took care of your car and got gas for the week.",
-          "noMessage":"It's ok, maybe you'll ride your bike this week instead."
-        }
-      },
-      "geometry": {
-        "coordinates": [
-          -73.6918726,
-          42.7222275
-        ],
+        "coordinates": [-73.6901533, 42.7244484],
         "type": "Point"
       }
     },
@@ -434,20 +337,71 @@
         },
         "description": "Licensed after school program serving low to moderate income families in the community. We also offer a teen program and traveling summer camp.",
         "taskInfo": {
-          "task":"Support a Non-Profit",
-          "priority":"Want",
-          "cost":"-10",
-          "utility":"10",
-          "time":".5hr",
-          "yesMessage":"Nice! Writing this off on your taxes will save you money at the end of the year!",
-          "noMessage":"It's ok, you'll try to donate next year."
+          "task": "Support a Non-Profit",
+          "priority": "Want",
+          "cost": "-10",
+          "utility": "10",
+          "time": ".5hr",
+          "yesMessage": "Nice! Writing this off on your taxes will save you money at the end of the year!",
+          "noMessage": "It's ok, you'll try to donate next year."
         }
       },
       "geometry": {
-        "coordinates": [
-          -73.6909806,
-          42.7239676
-        ],
+        "coordinates": [-73.6909806, 42.7239676],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Riverfront Park",
+        "website": "https://www.riverexplorer.com/hudson/details.php?id=3032",
+        "address": {
+          "street": "255 Front Street",
+          "city": "Troy",
+          "state": "NY",
+          "zip": "12180"
+        },
+        "description": "Troy Riverfront Park is a 4.4 acre waterfront located in the heart of Troy, New York.",
+        "taskInfo": {
+          "task": "Walk Neighborhood Dogs",
+          "priority": "Earn",
+          "cost": "+50",
+          "utility": "10",
+          "time": "2hr",
+          "yesMessage": "Nice! You had a nice walk and earned some extra cash!",
+          "noMessage": "It's ok, you can always walk the dogs another day."
+        }
+      },
+      "geometry": {
+        "coordinates": [-73.6909623, 42.7331606],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Can Stop Redemption Center and Groceries",
+        "website": "https://www.canstopredemptioncenter.com/",
+        "address": {
+          "street": "408 Washington Street",
+          "city": "Troy",
+          "state": "NY",
+          "zip": "12180"
+        },
+        "description": "Melissa and Bill Crandall started Can Stop to do their part in making our world a 'Greener Friendly Environment' for future generations to come.",
+        "taskInfo": {
+          "task": "Bottle Return",
+          "priority": "Earn",
+          "cost": "+5",
+          "utility": "10",
+          "time": ".5hr",
+          "yesMessage": "Nice! You helped the environment, and earned some extra cash.",
+          "noMessage": "It's ok, you'll save your bottle for next time."
+        }
+      },
+      "geometry": {
+        "coordinates": [-73.6901533, 42.7244484],
         "type": "Point"
       }
     }
