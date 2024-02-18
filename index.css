@@ -124,6 +124,7 @@ body {
   height: 80%;
   padding: 1rem;
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
+  height: 100%;
 }
 #budget > div > p, #tasks > div > p {
   font-size: 1.25rem;
@@ -140,6 +141,7 @@ body {
 
 .reset-button {
     position: absolute;
+    z-index: 1;
     background-color: #202020;
     border: none;
     color: white;
@@ -152,7 +154,7 @@ body {
     border-radius: .75rem;
     margin-top: 16px;
     margin-bottom: 10px;
-    margin-left: 250px;
+    margin-left: 310px;
     margin-right: 10px;
     transition-duration: 0.4s;
     overflow: hidden;
@@ -203,8 +205,109 @@ body {
     outline: none;
 }
 
-#tasksList {
-    box-shadow: 0 100px 20px black;
+#tasks > #tasksList {
+    height: 100%;
+}
+
+.positive {
+    color: #4CAF50;
+    margin: 5px 0;
+}
+
+.negative {
+    color: #f44336;
+    margin: 5px 0;
+}
+
+.budgetHistoryTask {
+    margin: 5px 0;
+}
+
+.budgetHistoryTransaction {
+    display: flex;
+    align-items: row;
+    justify-content: space-between;
+}
+
+
+.endday {
+  position: absolute;
+  z-index: 1;
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: .75rem;
+  margin-top: 65px;
+  margin-bottom: 10px;
+  margin-left: 310px;
+  margin-right: 10px;
+  transition-duration: 0.4s;
+  overflow: hidden;
+  outline: none;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 2; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: fit-content;
+  border-radius: 0.75rem;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#closeModal {
+  z-index: 1;
+  background-color: #202020;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: .75rem;
+  margin-top: 16px;
+  margin-left: 10px;
+  margin-right: 10px;
+  transition-duration: 0.4s;
+  overflow: hidden;
+  outline: none;
 }
 
 #main-resources {
