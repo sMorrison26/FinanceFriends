@@ -102,7 +102,7 @@ body {
   
 }
 #budget > div, #tasks > div {
-  overflow: auto; 
+  overflow-y: auto; 
   margin: 1rem;
   background-color: white;
   border-radius: 0.75rem;

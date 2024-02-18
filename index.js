@@ -108,7 +108,8 @@ function loadMarkers() {
                 output += `<input id="no${substringUpToFirstSpace}" class="noButton" type="submit" value="No">`;
                 output += `</div>`;
                 const div = document.createElement('div');
-                div.id = feature.properties.name;
+                div.id = feature.properties.name.replace(/ /g,"_");
+                console.log(div.id)
                 div.innerHTML = output;
                 // Create a new popup with the div's content
                 const popup = new mapboxgl.Popup().setDOMContent(div);
@@ -193,9 +194,10 @@ function getBusinesses() {
                             <th style="padding-top:1rem;">Time:&nbsp;</th>
                         </tr>`;
                 }
+                let coords = this.geometry.coordinates[0]+"_"+this.geometry.coordinates[1];
                 output += `
                     <tr>
-                        <td class="table-hover" onclick="">`+this.properties.taskInfo.task+`</td>
+                        <td id="task-`+this.properties.name.replace(/ /g,"_")+`" class="table-hover" onclick='openPin("`+coords+`");'>`+this.properties.taskInfo.task+`</td>
                         <td>`+this.properties.taskInfo.utility+`</td>
                         <td>`+this.properties.taskInfo.cost+`</td>
                         <td>`+this.properties.taskInfo.time+`</td>
@@ -210,4 +212,15 @@ function getBusinesses() {
             console.error(err);
         }
     })
+}
+
+function openPin(coords){
+    console.log(coords)
+    let arr = coords.split("_")
+    map.flyTo({
+        center: arr,
+        zoom: 17,
+        pitch: 65,
+        bearing: 125
+    });
 }
