@@ -19,7 +19,7 @@
           "utility": "10",
           "time": "60",
           "yesMessage": "Nice! You got groceries to make healthy meals for the week.",
-          "noMessage": "It's ok, you'll have to find food some other way this week."
+          "noMessage": "Its ok, youll have to find food some other way this week."
         }
       },
       "geometry": {
@@ -46,7 +46,7 @@
           "utility": "0",
           "time": "60",
           "yesMessage": "Nice! You paid your bills and can rest easy for the month.",
-          "noMessage": "It's ok, hopefully they don't shut off the heat."
+          "noMessage": "Its ok, hopefully they dont shut off the heat."
         }
       },
       "geometry": {
@@ -73,7 +73,7 @@
           "utility": "0",
           "time": "60",
           "yesMessage": "Nice! You paid your rent and can rest easy for the month.",
-          "noMessage": "It's ok, hopefully your landlord won't kick you out."
+          "noMessage": "Its ok, hopefully your landlord wont kick you out."
         }
       },
       "geometry": {
@@ -100,7 +100,7 @@
           "utility": "0",
           "time": "60",
           "yesMessage": "Nice! You got some supplies so you can finally fix your sink.",
-          "noMessage": "It's ok, you'll just fix your sink another time."
+          "noMessage": "Its ok, youll just fix your sink another time."
         }
       },
       "geometry": {
@@ -111,7 +111,7 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Caprara's Auto Body",
+        "name": "Capraras Auto Body",
         "website": "https://capraras.com/",
         "address": {
           "street": "266 3rd Street",
@@ -127,7 +127,7 @@
           "utility": "0",
           "time": "60",
           "yesMessage": "Nice! You took care of your car and got gas for the week.",
-          "noMessage": "It's ok, maybe you'll ride your bike this week instead."
+          "noMessage": "Its ok, maybe youll ride your bike this week instead."
         }
       },
       "geometry": {
@@ -146,7 +146,7 @@
           "state": "NY",
           "zip": "12180"
         },
-        "description": "Goodway Gourmet Bakery isn't just a name; it's a legacy. Established years ago in the bustling streets of Troy, New York, our bakery has been the cornerstone of many celebrations.",
+        "description": "Goodway Gourmet Bakery isnt just a name; its a legacy. Established years ago in the bustling streets of Troy, New York, our bakery has been the cornerstone of many celebrations.",
         "taskInfo": {
           "task": "Get a Treat",
           "priority": "Want",
@@ -154,7 +154,7 @@
           "utility": "10",
           "time": "60",
           "yesMessage": "Nice! You got a yummy slice of cake.",
-          "noMessage": "It's ok, you have some treats at home."
+          "noMessage": "Its ok, you have some treats at home."
         }
       },
       "geometry": {
@@ -181,7 +181,7 @@
           "utility": "20",
           "time": "60",
           "yesMessage": "Nice! You enjoyed a yummy treat with friends.",
-          "noMessage": "It's ok, you'll see your friends another day."
+          "noMessage": "Its ok, youll see your friends another day."
         }
       },
       "geometry": {
@@ -208,7 +208,7 @@
           "utility": "50",
           "time": "120",
           "yesMessage": "Nice! You took a fun dance class and learned some new moves.",
-          "noMessage": "It's ok, you can always learn to dance from YouTube."
+          "noMessage": "Its ok, you can always learn to dance from YouTube."
         }
       },
       "geometry": {
@@ -235,7 +235,7 @@
           "utility": "50",
           "time": "30",
           "yesMessage": "Nice! You got some cool new kicks.",
-          "noMessage": "It's ok, you'll ask for new shoes for your birthday."
+          "noMessage": "Its ok, youll ask for new shoes for your birthday."
         }
       },
       "geometry": {
@@ -261,8 +261,8 @@
           "cost": "-20",
           "utility": "20",
           "time": "60",
-          "yesMessage": "Nice! You're full, but you're down $20.",
-          "noMessage": "It's ok, you'll cook dinner at home tonight."
+          "yesMessage": "Nice! Youre full, but youre down $20.",
+          "noMessage": "Its ok, youll cook dinner at home tonight."
         }
       },
       "geometry": {
@@ -288,8 +288,8 @@
           "cost": "-30",
           "utility": "30",
           "time": "120",
-          "yesMessage": "Nice! You got a fresh style, but now you're down $30.",
-          "noMessage": "It's ok, you'll wait until next month for a new style, but you saved some cash."
+          "yesMessage": "Nice! You got a fresh style, but now youre down $30.",
+          "noMessage": "Its ok, youll wait until next month for a new style, but you saved some cash."
         }
       },
       "geometry": {
@@ -316,11 +316,11 @@
           "utility": "0",
           "time": "60",
           "yesMessage": "Nice! You helped the environment, and earned some extra cash.",
-          "noMessage": "It's ok, you'll save your clothes for next season."
+          "noMessage": "Its ok, youll save your clothes for next season."
         }
       },
       "geometry": {
-        "coordinates": [-73.6901533, 42.7244484],
+        "coordinates": [-73.6909293, 42.7319598],
         "type": "Point"
       }
     },
@@ -343,7 +343,7 @@
           "utility": "10",
           "time": "30",
           "yesMessage": "Nice! Writing this off on your taxes will save you money at the end of the year!",
-          "noMessage": "It's ok, you'll try to donate next year."
+          "noMessage": "Its ok, youll try to donate next year."
         }
       },
       "geometry": {
@@ -370,7 +370,7 @@
           "utility": "10",
           "time": "120",
           "yesMessage": "Nice! You had a nice walk and earned some extra cash!",
-          "noMessage": "It's ok, you can always walk the dogs another day."
+          "noMessage": "Its ok, you can always walk the dogs another day."
         }
       },
       "geometry": {
@@ -389,7 +389,7 @@
           "state": "NY",
           "zip": "12180"
         },
-        "description": "Melissa and Bill Crandall started Can Stop to do their part in making our world a 'Greener Friendly Environment' for future generations to come.",
+        "description": "Melissa and Bill Crandall started Can Stop to do their part in making our world a Greener Friendly Environment for future generations to come.",
         "taskInfo": {
           "task": "Bottle Return",
           "priority": "Earn",
@@ -397,7 +397,7 @@
           "utility": "10",
           "time": "30",
           "yesMessage": "Nice! You helped the environment, and earned some extra cash.",
-          "noMessage": "It's ok, you'll save your bottle for next time."
+          "noMessage": "Its ok, youll save your bottle for next time."
         }
       },
       "geometry": {
