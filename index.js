@@ -1,5 +1,6 @@
 var budget = 1800;
 var minutes = 480;
+var utility = 0;
 $(document).ready(function () {
 
     getBusinesses();
@@ -108,7 +109,8 @@ function loadMarkers() {
                 output += `<input id="no${substringUpToFirstSpace}" class="noButton" type="submit" value="No">`;
                 output += `</div>`;
                 const div = document.createElement('div');
-                div.id = feature.properties.name;
+                div.id = feature.properties.name.replace(/ /g,"_");
+                console.log(div.id)
                 div.innerHTML = output;
                 // Create a new popup with the div's content
                 const popup = new mapboxgl.Popup().setDOMContent(div);
@@ -130,6 +132,7 @@ $(document).ready(async function () {
         let id = this.id; // Get the id of the clicked element
         id = id.substring(2);
         $(`#${id}`).html('');
+        accpeted(id);
     });
     $(document).on('click', '.noButton', function () {
         let id = this.id; // Get the id of the clicked element
@@ -154,6 +157,33 @@ function denied(id){
                 else { substringUpToFirstSpace=feature.properties.name; }
                 if (id == substringUpToFirstSpace){
                     $(`#${id}`).html(`${feature.properties.taskInfo.noMessage}`);
+                }                
+            });
+        },
+        error: function(err){
+            console.error(err)
+        }
+    })
+}
+
+function accpeted(id){
+    $.ajax({
+        type: 'GET',
+        url: './businesses.geojson',
+        dataType: 'json',
+        success: function(data){
+            $(`#${id}`).html(`<p>${data.feat}`);
+            data.features.forEach(feature => {
+                let firstSpaceIndex = (feature.properties.name).indexOf(' '); // Find the index of the first space
+                var substringUpToFirstSpace = '';
+                // Check if there's a space in the string
+                if (firstSpaceIndex !== -1) { substringUpToFirstSpace = (feature.properties.name).substring(0, firstSpaceIndex); }
+                else { substringUpToFirstSpace=feature.properties.name; }
+                if (id == substringUpToFirstSpace){
+                    $(`#${id}`).html(`${feature.properties.taskInfo.yesMessage}`);
+                    budget += feature.properties.taskInfo.cost;
+                    minutes -= feature.properties.taskInfo.time;
+                    utility += feature.properties.taskInfo.utility;
                 }                
             });
         },
@@ -193,9 +223,10 @@ function getBusinesses() {
                             <th style="padding-top:1rem;">Time:&nbsp;</th>
                         </tr>`;
                 }
+                let coords = this.geometry.coordinates[0]+"_"+this.geometry.coordinates[1];
                 output += `
                     <tr>
-                        <td class="table-hover" onclick="">`+this.properties.taskInfo.task+`</td>
+                        <td id="task-`+this.properties.name.replace(/ /g,"_")+`" class="table-hover" onclick='openPin("`+coords+`");'>`+this.properties.taskInfo.task+`</td>
                         <td>`+this.properties.taskInfo.utility+`</td>
                         <td>`+this.properties.taskInfo.cost+`</td>
                         <td>`+this.properties.taskInfo.time+`</td>
@@ -210,4 +241,15 @@ function getBusinesses() {
             console.error(err);
         }
     })
+}
+
+function openPin(coords){
+    console.log(coords)
+    let arr = coords.split("_")
+    map.flyTo({
+        center: arr,
+        zoom: 17,
+        pitch: 65,
+        bearing: 125
+    });
 }
