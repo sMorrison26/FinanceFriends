@@ -37,7 +37,7 @@ map.on('click', (event) => {
     const popup = new mapboxgl.Popup({ offset: [0, -15] })
         .setLngLat(feature.geometry.coordinates)
         .setHTML(
-            `<h3>${feature.properties.name}</h3><p>${feature.properties.description}</p><a href="${feature.properties.website}">Swag</a>`
+            `<h3>${feature.properties.name}</h3><p>${feature.properties.description}</p><a href="${feature.properties.website}" target="_blank">Swag</a>`
 
         )
         .addTo(map);
@@ -163,7 +163,7 @@ function loadMarkers() {
                 let output = `<h2>${feature.properties.name}</h2>`;
                 output += `<h3>${feature.properties.taskInfo.task}</h3>`;
                 output += `<p>${feature.properties.description}</p>`;
-                output += `<a href="${feature.properties.website}">Website</a>`;
+                output += `<a href="${feature.properties.website}" target="_blank">Website</a>`;
                 output += `<div id="${feature.properties.name.replace(/ /g, "")}">`;
                 output += `<input id="ye${feature.properties.name.replace(/ /g, "")}" class="yesButton" type="submit" value="Yes">`;
                 output += `<input id="no${feature.properties.name.replace(/ /g, "")}" class="noButton" type="submit" value="No">`;
@@ -281,7 +281,7 @@ function getBusinesses() {
                     if (i == 5) output += `Want to Do:`
                     if (i == 11) output += `Ways to Earn:`
                     output += `</th>
-                            <th style="padding-top:1rem;">HP:&nbsp;</th>
+                            <th style="padding-top:1rem;">*HP:&nbsp;</th>
                             <th style="padding-top:1rem;">Cost:&nbsp;</th>
                             <th style="padding-top:1rem;">Time:&nbsp;</th>
                         </tr>`;
@@ -297,7 +297,8 @@ function getBusinesses() {
                 `;
                 i++;
             });
-            output += `</table>`
+            output += `</table>`;
+            output += `<h3>*HP = Happiness Points (It's important to do what you need to, and what makes you happy too!)</h3>`
             $("#tasksList").html(output);
         },
 
