@@ -1,0 +1,62 @@
+{
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name":"First Choice Caribbean",
+        "website":"https://www.restaurantji.com/ny/troy/first-choice-caribbean-/",
+      "address":
+      {
+        "street": "451 Fulton Street",
+        "city": "Troy",
+        "state": "NY",
+        "zip": "12180"
+      },
+      "description":"Authentic Jamaican food & Caribbean vegan cuisine"
+      },
+      "geometry": {
+        "coordinates": [42.7321609, -73.6880956],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name":"Forever Royal Hair Studio",
+      "website":"https://l.facebook.com/l.php?u=http%3A%2F%2Fwww.foreverrhair.com%2F%3Ffbclid%3DIwAR3aDK3VG9QsB-u6hIIV8epvViWJtAPI80uPoRyVvZlthNQ1zGRJ0W1IWzQ&h=AT0REasxWJ1yV_l-x6SzZlYt-EA2Bw1kFDkEsvrw0WWJv9biuY6gUY9DdhWY5hQnXj6MyFiJ2VM5h2a7XlbkOj0iWkvkGA6S12zZ5LDf8ktyqCYNBKP7aeD3L02UwC6nDlAOlA",
+      "address":
+      {
+        "street": "150 4th Street",
+        "city": "Troy",
+        "state": "NY",
+        "zip": "12180"
+      },
+      "description":"Forever Royal Haircare provides you with natural hair products made from organic ingredient"
+      },
+      "geometry": {
+        "coordinates": [42.7278315, -73.6895296],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name":"Organa Food & Juice Bar",
+      "website":"www.organajuices.com",
+      "address":
+      {
+        "street": "433 River Street",
+        "city": "Troy",
+        "state": "NY",
+        "zip": "12180"
+      },
+      "description":"Located at River Street Market Fresh juices with plant based meals and Healthy snack choices."
+      },
+      "geometry": {
+        "coordinates": [42.7372578,-73.6871924],
+        "type": "Point"
+      }
+    }
+  ],
+  "type": "FeatureCollection"
+}
