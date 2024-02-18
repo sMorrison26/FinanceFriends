@@ -3,6 +3,7 @@ var hours = 8;
 $(document).ready(function () {
 
     getBusinesses();
+
 })
 
 
@@ -90,44 +91,85 @@ function loadMarkers() {
         dataType: 'json',
         type: 'GET',
         success: function (data) {
-            console.log('GeoJSON data:', data);
             // Use forEach, not foreach (JavaScript is case-sensitive)
             data.features.forEach(feature => {
+                let firstSpaceIndex = (feature.properties.name).indexOf(' '); // Find the index of the first space
+                var substringUpToFirstSpace = '';
+                // Check if there's a space in the string
+                if (firstSpaceIndex !== -1) { substringUpToFirstSpace = (feature.properties.name).substring(0, firstSpaceIndex); }
+                else { substringUpToFirstSpace=feature.properties.name; }
+
                 let output = `<h2>${feature.properties.name}</h2>`;
                 output += `<p>${feature.properties.description}</p>`;
-                output += `<a href="${feature.properties.website}">Company Website</a>`;
-                console.log("Output: ", output);
+                output += `<a href="${feature.properties.website}">Website</a>`;
+                output += `<div id="${substringUpToFirstSpace}">`;
+                output += `<p>${feature.properties.taskInfo.task}</p>`;
+                output += `<input id="ye${substringUpToFirstSpace}" class="yesButton" type="submit" value="Yes">`;
+                output += `<input id="no${substringUpToFirstSpace}" class="noButton" type="submit" value="No">`;
+                output += `</div>`;
                 const div = document.createElement('div');
                 div.id = feature.properties.name;
                 div.innerHTML = output;
-                console.log("div: ", div);
                 // Create a new popup with the div's content
                 const popup = new mapboxgl.Popup().setDOMContent(div);
-                
-                console.log("coords: ", feature.geometry.coordinates);
                 new mapboxgl.Marker()
                     .setLngLat(feature.geometry.coordinates)
                     .setPopup(popup) // sets a popup on this marker
                     .addTo(map);
             });
-
         },
         error: function (jqXHR, textStatus, errorThrown) {
             console.log('Error fetching the GeoJSON data:', textStatus, errorThrown);
         }
     });
 }
-
-$(document).ready(function () {
-    loadMarkers();
+//onclick="console.log(this.id);
+$(document).ready(async function () {
+    await loadMarkers();
+    $(document).on('click', '.yesButton', function () {
+        let id = this.id; // Get the id of the clicked element
+        id = id.substring(2);
+        $(`#${id}`).html('');
+    });
+    $(document).on('click', '.noButton', function () {
+        let id = this.id; // Get the id of the clicked element
+        id = id.substring(2);
+        $(`#${id}`).html('');
+        denied(id);
+    });
 });
 
+function denied(id){
+    $.ajax({
+        type: 'GET',
+        url: './businesses.geojson',
+        dataType: 'json',
+        success: function(data){
+            $(`#${id}`).html(`<p>${data.feat}`);
+            data.features.forEach(feature => {
+                let firstSpaceIndex = (feature.properties.name).indexOf(' '); // Find the index of the first space
+                var substringUpToFirstSpace = '';
+                // Check if there's a space in the string
+                if (firstSpaceIndex !== -1) { substringUpToFirstSpace = (feature.properties.name).substring(0, firstSpaceIndex); }
+                else { substringUpToFirstSpace=feature.properties.name; }
+                if (id == substringUpToFirstSpace){
+                    $(`#${id}`).html(`${feature.properties.taskInfo.noMessage}`);
+                }                
+            });
+        },
+        error: function(err){
+            console.error(err)
+        }
+    })
+}
 
-function getBusinesses(){
+
+function getBusinesses() {
     $.ajax({
         type: 'GET',
         url: './businesses.geojson',
         content: 'json',
+<<<<<<< Updated upstream
         success: function(data) {
             let output = `
             <p style="display:flex; justify-content:space-between;align-items:center; margin-bottom:0.5em;">
@@ -154,12 +196,26 @@ function getBusinesses(){
                             <th style="padding-top:1rem;">Time:&nbsp;</th>
                         </tr>`;
                 }
+=======
+        success: function (data) {
+            let output = `<p>My Tasks: </p>`;
+            output += `
+            <table id="tasksTable">
+                <tr style="text-align:left">
+                    <th>To complete:</th>
+                    <th>HP:&nbsp;</th>
+                    <th>Cost:&nbsp;</th>
+                    <th>Time:&nbsp;</th>
+                <tr>
+            `;
+            $(data.features).each(function () {
+>>>>>>> Stashed changes
                 output += `
                     <tr>
-                        <td>`+this.properties.taskInfo.task+`</td>
-                        <td>`+this.properties.taskInfo.utility+`</td>
-                        <td>`+this.properties.taskInfo.cost+`</td>
-                        <td>`+this.properties.taskInfo.time+`</td>
+                        <td>`+ this.properties.taskInfo.task + `</td>
+                        <td>`+ this.properties.taskInfo.utility + `</td>
+                        <td>`+ this.properties.taskInfo.cost + `</td>
+                        <td>`+ this.properties.taskInfo.time + `</td>
                     <tr>                   
                 `;
                 i++;
@@ -167,7 +223,7 @@ function getBusinesses(){
             output += `</table>`
             $("#tasksList").html(output);
         },
-        error: function(err){
+        error: function (err) {
             console.error(err);
         }
     })
