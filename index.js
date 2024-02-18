@@ -298,7 +298,7 @@ function getBusinesses() {
                 i++;
             });
             output += `</table>`;
-            output += `<h3>*HP = Happiness Points (its important to do what you need to, and what makes you happy too)</h3>`
+            output += `<h3>*HP = Happiness Points (It's important to do what you need to, and what makes you happy too!)</h3>`
             $("#tasksList").html(output);
         },
 
