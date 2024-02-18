@@ -312,7 +312,7 @@
         "taskInfo": {
           "task": "Resell Old Clothes",
           "priority": "Earn",
-          "cost": "+50",
+          "cost": "50",
           "utility": "0",
           "time": "60",
           "yesMessage": "Nice! You helped the environment, and earned some extra cash.",
@@ -366,7 +366,7 @@
         "taskInfo": {
           "task": "Walk Neighborhood Dogs",
           "priority": "Earn",
-          "cost": "+50",
+          "cost": "50",
           "utility": "10",
           "time": "120",
           "yesMessage": "Nice! You had a nice walk and earned some extra cash!",
@@ -393,7 +393,7 @@
         "taskInfo": {
           "task": "Bottle Return",
           "priority": "Earn",
-          "cost": "+5",
+          "cost": "5",
           "utility": "10",
           "time": "30",
           "yesMessage": "Nice! You helped the environment, and earned some extra cash.",
