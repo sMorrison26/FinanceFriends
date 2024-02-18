@@ -33,6 +33,7 @@ map.on('click', (event) => {
 
 
 });
+
 function addMarker() {
     const popup = new mapboxgl.Popup({ offset: [0, -15] })
         .setLngLat([-87.637596, 41.940403])
@@ -54,9 +55,49 @@ resetButton.onclick = function () {
         bearing: 125
     });
 };
+const tasksdiv = document.createElement('div');
+tasksdiv.id = 'tasks';
+tasksdiv.innerHTML = `<div id="tasksList"></div>`;
+map.getCanvas().parentNode.appendChild(tasksdiv);
+
 map.getCanvas().parentNode.appendChild(resetButton);
 
+function loadMarkers() {
+    $.ajax({
+        url: './businesses.geojson', // Update to the actual path
+        dataType: 'json',
+        type: 'GET',
+        success: function (data) {
+            console.log('GeoJSON data:', data);
+            // Use forEach, not foreach (JavaScript is case-sensitive)
+            data.features.forEach(feature => {
+                let output = `<h2>${feature.properties.name}</h2>`;
+                output += `<p>${feature.properties.description}</p>`;
+                output += `<a href="${feature.properties.website}">Company Website</a>`;
+                console.log("Output: ", output);
+                const div = document.createElement('div');
+                div.innerHTML = output;
+                console.log("div: ", div);
+                // Create a new popup with the div's content
+                const popup = new mapboxgl.Popup().setDOMContent(div);
+                
+                console.log("coords: ", feature.geometry.coordinates);
+                new mapboxgl.Marker()
+                    .setLngLat(feature.geometry.coordinates)
+                    .setPopup(popup) // sets a popup on this marker
+                    .addTo(map);
+            });
 
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.log('Error fetching the GeoJSON data:', textStatus, errorThrown);
+        }
+    });
+}
+
+$(document).ready(function () {
+    loadMarkers();
+});
 
 
 function getBusinesses(){
