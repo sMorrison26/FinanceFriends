@@ -1,3 +1,8 @@
+$(document).ready(function () {
+    getBusinesses();
+})
+
+
 mapboxgl.accessToken = 'pk.eyJ1IjoiaGVucnlyb2JiIiwiYSI6ImNsc3E5cWZwbTB6MWQybm51ZWhnNXZqdGYifQ.VP-6WVFeERn_zB1sN8PZdA';
 const map = new mapboxgl.Map({
     container: 'map',
@@ -52,3 +57,40 @@ resetButton.onclick = function () {
 map.getCanvas().parentNode.appendChild(resetButton);
 
 
+
+
+function getBusinesses(){
+    $.ajax({
+        type: 'GET',
+        url: './businesses.geojson',
+        content: 'json',
+        success: function(data) {
+            let output = `<p>My Tasks: </p>`;
+            output += `
+            <table id="tasksTable">
+                <tr style="text-align:left">
+                    <th>To complete:</th>
+                    <th>HP:&nbsp;</th>
+                    <th>Cost:&nbsp;</th>
+                    <th>Time:&nbsp;</th>
+                <tr>
+            `;
+            $(data.features).each(function() {
+                console.log(this)
+                output += `
+                    <tr>
+                        <td>`+this.properties.taskInfo.task+`</td>
+                        <td>`+this.properties.taskInfo.utility+`</td>
+                        <td>`+this.properties.taskInfo.cost+`</td>
+                        <td>`+this.properties.taskInfo.time+`</td>
+                    <tr>                   
+                `;
+            });
+            output += `</table>`
+            $("#tasksList").html(output);
+        },
+        error: function(err){
+            console.error(err);
+        }
+    })
+}
