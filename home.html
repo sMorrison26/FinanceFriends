@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <link href="index.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v3.1.0/mapbox-gl.js"></script>
+    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v3.1.0/mapbox-gl.css" rel="stylesheet" />
+
+  </head>
+  <body>
+    <nav id="nav">
+      <div id="logo">
+        <img src="img/horse_black.png" alt="Trojan Horse">
+        <a id="trip" href="index.html">Trip to Troy</a>
+      </div>
+      <div id="navbuttons">
+        <a href="./instructions.html">Instructions</a>
+        <a href="./resources.html">Resources</a>
+        <a href="./about.html">About</a>
+      </div>
+    </nav>
+    <main id="main">
+      <div class="content">
+        <div id="myModal" class="modal">
+
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close">&times;</span>
+          </div>
+        </div>
+        <div id="map"></div>
+      </div>
+    </main>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
