@@ -19,8 +19,8 @@ body {
   padding-top: 1.25rem; 
   padding-bottom: 1.25rem; 
   font-weight: 500; 
-  color: white; 
-  background-image: linear-gradient(to right, #2DE1FC, #5887FF);
+  color: white;
+  height: 4%;
 }
 
 #nav > p {
@@ -31,7 +31,8 @@ body {
 #nav > div {
   display: flex;
   justify-content: space-between;
-  width: 300px; 
+  width: 400px; 
+  margin-right: 10px;
 }
 #nav a {
   font-size: 1.25rem;
@@ -39,11 +40,11 @@ body {
   align-items: center;
   color: white;
   text-decoration: none;
-  background-color: #252525;
-  border: 0.125rem solid #202020;
-  border-radius: 0.75rem;
+  background-color: #009bd6;
+  border: 0.125rem solid #009bd6;
+  border-radius: .75rem;
   font-size: medium;
-  padding: 5px;
+  padding: 10px 20px;
 }
 /* When you hover the nav a element, make it fade it and have the color and background color swap clors */
 #nav a:hover {
