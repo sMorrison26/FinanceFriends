@@ -90,7 +90,6 @@ function loadMarkers() {
         dataType: 'json',
         type: 'GET',
         success: function (data) {
-            console.log('GeoJSON data:', data);
             // Use forEach, not foreach (JavaScript is case-sensitive)
             data.features.forEach(feature => {
                 let output = `<h2>${feature.properties.name}</h2>`;
@@ -139,8 +138,6 @@ function getBusinesses(){
             let i=0;
             output+=`<table class="tasksTable">`;
             $(data.features).each(function() {
-                console.log(i);
-                console.log(this)
                 if (i==0 || i==5 || i == 11){
                     output += `
                         <tr style="text-align:left;">
@@ -156,7 +153,7 @@ function getBusinesses(){
                 }
                 output += `
                     <tr>
-                        <td>`+this.properties.taskInfo.task+`</td>
+                        <td class="table-hover" onclick="">`+this.properties.taskInfo.task+`</td>
                         <td>`+this.properties.taskInfo.utility+`</td>
                         <td>`+this.properties.taskInfo.cost+`</td>
                         <td>`+this.properties.taskInfo.time+`</td>
