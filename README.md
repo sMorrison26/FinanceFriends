@@ -13,3 +13,5 @@ Continue completing tasks while maximizing your budget without running out of ti
 how many happiness points you can earn!
 
 Good luck on your budgeting adventure!
+
+https://smorrison26.github.io/FinanceFriends/landing.html
