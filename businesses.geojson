@@ -17,7 +17,7 @@
           "priority": "Need",
           "cost": "-50",
           "utility": "10",
-          "time": "1hr",
+          "time": "60",
           "yesMessage": "Nice! You got groceries to make healthy meals for the week.",
           "noMessage": "It's ok, you'll have to find food some other way this week."
         }
@@ -44,7 +44,7 @@
           "priority": "Need",
           "cost": "-500",
           "utility": "0",
-          "time": "1hr",
+          "time": "60",
           "yesMessage": "Nice! You paid your bills and can rest easy for the month.",
           "noMessage": "It's ok, hopefully they don't shut off the heat."
         }
@@ -71,7 +71,7 @@
           "priority": "Need",
           "cost": "-1000",
           "utility": "0",
-          "time": ".5hr",
+          "time": "60",
           "yesMessage": "Nice! You paid your rent and can rest easy for the month.",
           "noMessage": "It's ok, hopefully your landlord won't kick you out."
         }
@@ -98,7 +98,7 @@
           "priority": "Need",
           "cost": "-50",
           "utility": "0",
-          "time": ".5hr",
+          "time": "60",
           "yesMessage": "Nice! You got some supplies so you can finally fix your sink.",
           "noMessage": "It's ok, you'll just fix your sink another time."
         }
@@ -125,7 +125,7 @@
           "priority": "Need",
           "cost": "-50",
           "utility": "0",
-          "time": "1hr",
+          "time": "60",
           "yesMessage": "Nice! You took care of your car and got gas for the week.",
           "noMessage": "It's ok, maybe you'll ride your bike this week instead."
         }
@@ -152,7 +152,7 @@
           "priority": "Want",
           "cost": "-10",
           "utility": "10",
-          "time": ".5hr",
+          "time": "60",
           "yesMessage": "Nice! You got a yummy slice of cake.",
           "noMessage": "It's ok, you have some treats at home."
         }
@@ -179,7 +179,7 @@
           "priority": "Want",
           "cost": "-20",
           "utility": "20",
-          "time": "1hr",
+          "time": "60",
           "yesMessage": "Nice! You enjoyed a yummy treat with friends.",
           "noMessage": "It's ok, you'll see your friends another day."
         }
@@ -206,7 +206,7 @@
           "priority": "Want",
           "cost": "-50",
           "utility": "50",
-          "time": "2hr",
+          "time": "120",
           "yesMessage": "Nice! You took a fun dance class and learned some new moves.",
           "noMessage": "It's ok, you can always learn to dance from YouTube."
         }
@@ -233,7 +233,7 @@
           "priority": "Want",
           "cost": "-100",
           "utility": "50",
-          "time": ".5hr",
+          "time": "30",
           "yesMessage": "Nice! You got some cool new kicks.",
           "noMessage": "It's ok, you'll ask for new shoes for your birthday."
         }
@@ -260,7 +260,7 @@
           "priority": "Want",
           "cost": "-20",
           "utility": "20",
-          "time": "1hr",
+          "time": "60",
           "yesMessage": "Nice! You're full, but you're down $20.",
           "noMessage": "It's ok, you'll cook dinner at home tonight."
         }
@@ -287,7 +287,7 @@
           "priority": "Want",
           "cost": "-30",
           "utility": "30",
-          "time": "2hr",
+          "time": "120",
           "yesMessage": "Nice! You got a fresh style, but now you're down $30.",
           "noMessage": "It's ok, you'll wait until next month for a new style, but you saved some cash."
         }
@@ -312,9 +312,9 @@
         "taskInfo": {
           "task": "Resell Old Clothes",
           "priority": "Earn",
-          "cost": "+50",
+          "cost": "50",
           "utility": "0",
-          "time": "1hr",
+          "time": "60",
           "yesMessage": "Nice! You helped the environment, and earned some extra cash.",
           "noMessage": "It's ok, you'll save your clothes for next season."
         }
@@ -338,10 +338,10 @@
         "description": "Licensed after school program serving low to moderate income families in the community. We also offer a teen program and traveling summer camp.",
         "taskInfo": {
           "task": "Support a Non-Profit",
-          "priority": "Earn",
+          "priority": "Want",
           "cost": "-10",
           "utility": "10",
-          "time": ".5hr",
+          "time": "30",
           "yesMessage": "Nice! Writing this off on your taxes will save you money at the end of the year!",
           "noMessage": "It's ok, you'll try to donate next year."
         }
@@ -366,9 +366,9 @@
         "taskInfo": {
           "task": "Walk Neighborhood Dogs",
           "priority": "Earn",
-          "cost": "+50",
+          "cost": "50",
           "utility": "10",
-          "time": "2hr",
+          "time": "120",
           "yesMessage": "Nice! You had a nice walk and earned some extra cash!",
           "noMessage": "It's ok, you can always walk the dogs another day."
         }
@@ -393,9 +393,9 @@
         "taskInfo": {
           "task": "Bottle Return",
           "priority": "Earn",
-          "cost": "+5",
+          "cost": "5",
           "utility": "10",
-          "time": ".5hr",
+          "time": "30",
           "yesMessage": "Nice! You helped the environment, and earned some extra cash.",
           "noMessage": "It's ok, you'll save your bottle for next time."
         }

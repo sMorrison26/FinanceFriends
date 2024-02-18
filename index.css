@@ -8,28 +8,32 @@ body {
 }
 #map {
     width: 100%;
-    height: 90vh;
+    height: 92%;
     border-radius: 10px;
 }
-
 #nav {
   display: flex;
   justify-content: space-between;
   padding-left: 0.75rem; 
   padding-right: 0.75rem; 
-  padding-top: 1.5rem; 
-  padding-bottom: 1.5rem; 
+  padding-top: 1.25rem; 
+  padding-bottom: 1.25rem; 
   font-weight: 500; 
-  color: white; 
-  background-image: linear-gradient(to right, #2DE1FC, #5887FF);
+  color: white;
+  height: 4%;
 }
+
 #nav > p {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+  color: black;
 }
 #nav > div {
   display: flex;
   justify-content: space-between;
-  width: 33.333333%; 
+  width: 400px; 
+  margin-right: 10px;
 }
 #nav a {
   font-size: 1.25rem;
@@ -37,19 +41,23 @@ body {
   align-items: center;
   color: white;
   text-decoration: none;
+  background-color: #009bd6;
+  border: 0.125rem solid #009bd6;
+  border-radius: .75rem;
+  font-size: medium;
+  padding: 10px 20px;
+  height: fit-content;
+  margin-top: auto;
+  margin-bottom: auto;
 }
+
+/* When you hover the nav a element, make it fade it and have the color and background color swap clors */
 #nav a:hover {
-  font-size: 1.25rem;
-  text-decoration: underline; 
-  background-image: linear-gradient(to right, #2DE1FC, #5887FF); 
-  background-clip: text; 
-  -webkit-background-clip: text; 
-  color: transparent; 
-  -webkit-text-fill-color: transparent; 
-  text-decoration-color: white; 
-  text-underline-offset: 8px;
-  text-decoration-thickness: 2px;
+    color: #202020;
+    background-color: white;
+    transition: all 0.25s ease;
 }
+
 #main {
   height: 100%; 
   background-color: white;
@@ -81,15 +89,12 @@ body {
 .wallet {
   height: 2rem; 
   width: 2rem; 
-  margin-right: 1rem;
 }
 .listbullet {
   height: 2rem; 
   width: 2rem; 
-  margin-left: 1rem;
 }
 #budget {
-  /* width: 40%;  */
   height: 100%; 
   color: black; 
   position: absolute;
@@ -97,6 +102,7 @@ body {
   
 }
 #budget > div, #tasks > div {
+  overflow: auto; 
   margin: 1rem;
   background-color: white;
   border-radius: 0.75rem;
@@ -137,9 +143,51 @@ body {
     overflow: hidden;
     outline: none;
 }
-#tasksTable {
-  width: 100%;
+.table-hover:hover{
+  text-decoration: underline;
+  cursor: pointer!important;
 }
+.tasksTable {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.yesButton {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: .75rem;
+    margin-right: 5px;
+    margin-top: 5px;
+    transition-duration: 0.4s;
+    overflow: hidden;
+    outline: none;
+}
+
+.noButton {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: .75rem;
+    margin-right: 5px;
+    margin-top: 5px;
+    transition-duration: 0.4s;
+    overflow: hidden;
+    outline: none;
+}
+
 #tasksList {
     box-shadow: 0 100px 20px black;
 }
