@@ -134,17 +134,24 @@ function getBusinesses(){
                     <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM3.75 12h.007v.008H3.75V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm-.375 5.25h.007v.008H3.75v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
                 </svg>
             </p>`;
-            output += `
-            <table id="tasksTable">
-                <tr style="text-align:left">
-                    <th>To complete:</th>
-                    <th>HP:&nbsp;</th>
-                    <th>Cost:&nbsp;</th>
-                    <th>Time:&nbsp;</th>
-                <tr>
-            `;
+            let i=0;
             $(data.features).each(function() {
+                console.log(i);
                 console.log(this)
+                if (i==0 || i==5 || i == 11){
+                    output += `
+                    <table class="tasksTable">
+                        <tr style="text-align:left">
+                            <th>`;
+                            if (i == 0) output += `Need to Do:`
+                            if (i == 5) output += `Want to Do:`
+                            if (i == 11) output += `Ways to Earn:`
+                    output += `</th>
+                            <th>HP:&nbsp;</th>
+                            <th>Cost:&nbsp;</th>
+                            <th>Time:&nbsp;</th>
+                        </tr>`;
+                }
                 output += `
                     <tr>
                         <td>`+this.properties.taskInfo.task+`</td>
@@ -153,6 +160,10 @@ function getBusinesses(){
                         <td>`+this.properties.taskInfo.time+`</td>
                     <tr>                   
                 `;
+                if (i==4 || i == 10){
+                    output += `</table><hr>`;
+                }
+                i++;
             });
             output += `</table>`
             $("#tasksList").html(output);
