@@ -7,7 +7,7 @@ let markers = {}; // Object to store your markers by their unique IDs
 $(document).ready(function () {
     getBusinesses();
     $("#logo").click(function() {
-        console.log('hi');
+        //console.log('hi');
         window.location.href="./index.html";
     })
 })
@@ -133,7 +133,7 @@ function updateBudgetHistory(cost, task) {
     else {
         transaction.innerHTML = `<p class="budgetHistoryTask">${task}</p><p class="negative">$${value}</p>`;
     }
-    console.log(transaction);
+    //console.log(transaction);
     $('#budgetHistory').append(transaction);
     $('#racks').html(`Remaining Balance: $${budget}`);
     $('#motion').html(`Remaining Time: ${minutes} min`);
@@ -171,8 +171,8 @@ function loadMarkers() {
                 const div = document.createElement('div');
                 div.innerHTML = output;
                 const popup = new mapboxgl.Popup().setDOMContent(div);
-                console.log("My name is: ",feature.properties.name);
-                console.log("My task div id is: ",feature.properties.name.replace(/ /g, ""))
+                //console.log("My name is: ",feature.properties.name);
+                //console.log("My task div id is: ",feature.properties.name.replace(/ /g, ""))
                 markers[feature.properties.name.replace(/ /g, "_")] = new mapboxgl.Marker()
                     .setLngLat(feature.geometry.coordinates)
                     .setPopup(popup) // sets a popup on this marker
@@ -180,17 +180,17 @@ function loadMarkers() {
             });
         },
         error: function (jqXHR, textStatus, errorThrown) {
-            console.log('Error fetching the GeoJSON data:', textStatus, errorThrown);
+            //console.log('Error fetching the GeoJSON data:', textStatus, errorThrown);
         }
     });
 }
-//onclick="console.log(this.id);
+//onclick="//console.log(this.id);
 $(document).ready(async function () {
     loadMarkers();
     $(document).on('click', '.yesButton', function () {
         let id = this.id; // Get the id of the clicked element
         id = id.substring(2);
-        console.log('My id is: ',id)
+        //console.log('My id is: ',id)
         $(`#${id}`).html('');
         accpeted(id);
     });
@@ -319,15 +319,15 @@ function getBusinesses() {
 
 function openPin(element, coords) {
     let id = element.id.substring(5); // Extract the correct part of the ID
-    console.log("IDs", id);
+    //console.log("IDs", id);
     // Check if the targeted marker exists and toggle its popup
     if (markers.hasOwnProperty(id)) {
-        // console.log("Attempting to toggle popup for marker ID:", id);
-        // console.log("Marker:", markers[id]);
-        // console.log("Popup:", markers[id].getPopup());
+        //console.log("Attempting to toggle popup for marker ID:", id);
+        //console.log("Marker:", markers[id]);
+        //console.log("Popup:", markers[id].getPopup());
         markers[id].togglePopup();
     } else {
-        console.log("No marker found for ID:", id);
+        //console.log("No marker found for ID:", id);
     }
     // Convert string coordinates to numbers and fly to them
     let arr = coords.split("_").map(Number);
