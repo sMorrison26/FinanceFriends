@@ -1,6 +1,8 @@
 var budget = 1800;
 var minutes = 480;
 var utility = 0;
+let markers = {}; // Object to store your markers by their unique IDs
+
 $(document).ready(function () {
 
     getBusinesses();
@@ -113,7 +115,7 @@ function loadMarkers() {
                 var substringUpToFirstSpace = '';
                 // Check if there's a space in the string
                 if (firstSpaceIndex !== -1) { substringUpToFirstSpace = (feature.properties.name).substring(0, firstSpaceIndex); }
-                else { substringUpToFirstSpace=feature.properties.name; }
+                else { substringUpToFirstSpace = feature.properties.name; }
 
                 let output = `<h2>${feature.properties.name}</h2>`;
                 output += `<h3>${feature.properties.taskInfo.task}</h3>`;
@@ -124,12 +126,10 @@ function loadMarkers() {
                 output += `<input id="no${substringUpToFirstSpace}" class="noButton" type="submit" value="No">`;
                 output += `</div>`;
                 const div = document.createElement('div');
-                div.id = feature.properties.name.replace(/ /g,"_");
-                console.log(div.id)
                 div.innerHTML = output;
-                // Create a new popup with the div's content
                 const popup = new mapboxgl.Popup().setDOMContent(div);
-                new mapboxgl.Marker()
+                console.log(feature.properties.name.replace(/ /g, "_"));
+                markers[feature.properties.name.replace(/ /g, "_")] = new mapboxgl.Marker()
                     .setLngLat(feature.geometry.coordinates)
                     .setPopup(popup) // sets a popup on this marker
                     .addTo(map);
@@ -157,45 +157,46 @@ $(document).ready(async function () {
     });
 });
 
-function denied(id){
+function denied(id) {
     $.ajax({
         type: 'GET',
         url: './businesses.geojson',
         dataType: 'json',
-        success: function(data){
+        success: function (data) {
             $(`#${id}`).html(`<p>${data.feat}`);
             data.features.forEach(feature => {
                 let firstSpaceIndex = (feature.properties.name).indexOf(' '); // Find the index of the first space
                 var substringUpToFirstSpace = '';
                 // Check if there's a space in the string
                 if (firstSpaceIndex !== -1) { substringUpToFirstSpace = (feature.properties.name).substring(0, firstSpaceIndex); }
-                else { substringUpToFirstSpace=feature.properties.name; }
-                if (id == substringUpToFirstSpace){
+                else { substringUpToFirstSpace = feature.properties.name; }
+                if (id == substringUpToFirstSpace) {
                     $(`#${id}`).html(`${feature.properties.taskInfo.noMessage}`);
-                }                
+                }
             });
         },
-        error: function(err){
+        error: function (err) {
             console.error(err)
         }
     })
 }
 
-function accpeted(id){
+function accpeted(id) {
     $.ajax({
         type: 'GET',
         url: './businesses.geojson',
         dataType: 'json',
-        success: function(data){
+        success: function (data) {
             $(`#${id}`).html(`<p>${data.feat}`);
             data.features.forEach(feature => {
                 let firstSpaceIndex = (feature.properties.name).indexOf(' '); // Find the index of the first space
                 var substringUpToFirstSpace = '';
                 // Check if there's a space in the string
                 if (firstSpaceIndex !== -1) { substringUpToFirstSpace = (feature.properties.name).substring(0, firstSpaceIndex); }
-                else { substringUpToFirstSpace=feature.properties.name; }
-                if (id == substringUpToFirstSpace){
+                else { substringUpToFirstSpace = feature.properties.name; }
+                if (id == substringUpToFirstSpace) {
                     $(`#${id}`).html(`${feature.properties.taskInfo.yesMessage}`);
+<<<<<<< Updated upstream
                     // Update the budget and time by the cost and time of the task using string to number conversion
                     budget += parseInt(feature.properties.taskInfo.cost);
                     console.log(budget);
@@ -209,6 +210,15 @@ function accpeted(id){
         },
         
         error: function(err){
+=======
+                    budget += feature.properties.taskInfo.cost;
+                    minutes -= feature.properties.taskInfo.time;
+                    utility += feature.properties.taskInfo.utility;
+                }
+            });
+        },
+        error: function (err) {
+>>>>>>> Stashed changes
             console.error(err)
         }
     })
@@ -221,7 +231,7 @@ function getBusinesses() {
         type: 'GET',
         url: './businesses.geojson',
         content: 'json',
-        success: function(data) {
+        success: function (data) {
             let output = `
             <p style="display:flex; justify-content:space-between;align-items:center; margin-bottom:0.5em;">
                 My Tasks: 
@@ -229,29 +239,29 @@ function getBusinesses() {
                     <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM3.75 12h.007v.008H3.75V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm-.375 5.25h.007v.008H3.75v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
                 </svg>
             </p>`;
-            let i=0;
-            output+=`<table class="tasksTable">`;
-            $(data.features).each(function() {
-                if (i==0 || i==5 || i == 11){
+            let i = 0;
+            output += `<table class="tasksTable">`;
+            $(data.features).each(function () {
+                if (i == 0 || i == 5 || i == 11) {
                     output += `
                         <tr style="text-align:left;">
                             <th style="padding-top:1rem;">`;
-                            if (i == 0) output += `Need to Do:`
-                            if (i == 5) output += `Want to Do:`
-                            if (i == 11) output += `Ways to Earn:`
+                    if (i == 0) output += `Need to Do:`
+                    if (i == 5) output += `Want to Do:`
+                    if (i == 11) output += `Ways to Earn:`
                     output += `</th>
                             <th style="padding-top:1rem;">HP:&nbsp;</th>
                             <th style="padding-top:1rem;">Cost:&nbsp;</th>
                             <th style="padding-top:1rem;">Time:&nbsp;</th>
                         </tr>`;
                 }
-                let coords = this.geometry.coordinates[0]+"_"+this.geometry.coordinates[1];
+                let coords = this.geometry.coordinates[0] + "_" + this.geometry.coordinates[1];
                 output += `
                     <tr>
-                        <td id="task-`+this.properties.name.replace(/ /g,"_")+`" class="table-hover" onclick='openPin(this,"`+coords+`");'>`+this.properties.taskInfo.task+`</td>
-                        <td>`+this.properties.taskInfo.utility+`</td>
-                        <td>`+this.properties.taskInfo.cost+`</td>
-                        <td>`+this.properties.taskInfo.time+`</td>
+                        <td id="task-`+ this.properties.name.replace(/ /g, "_") + `" class="table-hover" onclick='openPin(this,"` + coords + `");'>` + this.properties.taskInfo.task + `</td>
+                        <td>`+ this.properties.taskInfo.utility + `</td>
+                        <td>`+ this.properties.taskInfo.cost + `</td>
+                        <td>`+ this.properties.taskInfo.time + `</td>
                     <tr>                   
                 `;
                 i++;
@@ -265,12 +275,20 @@ function getBusinesses() {
     })
 }
 
-function openPin(element,coords){
-    let id = element.id.substring(5);
-    console.log(coords)
-    console.log(id)
-    let arr = coords.split("_")
-    $("#"+id).click();
+function openPin(element, coords) {
+    let id = element.id.substring(5); // Extract the correct part of the ID
+    console.log("IDs", id);
+    // Check if the targeted marker exists and toggle its popup
+    if (markers.hasOwnProperty(id)) {
+        // console.log("Attempting to toggle popup for marker ID:", id);
+        // console.log("Marker:", markers[id]);
+        // console.log("Popup:", markers[id].getPopup());
+        markers[id].togglePopup();
+    } else {
+        console.log("No marker found for ID:", id);
+    }
+    // Convert string coordinates to numbers and fly to them
+    let arr = coords.split("_").map(Number);
     map.flyTo({
         center: arr,
         zoom: 17,
