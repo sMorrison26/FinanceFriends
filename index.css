@@ -1,14 +1,14 @@
 body {
     margin: 0;
     padding: 0;
-    }
+  }
 
-    #map {
+  #map {
     position: absolute;
-    top: 200;
-    bottom: 200;
-    width: 75%;
-    }
+    top: 0;
+    bottom: 0;
+    width: 100%;
+  }
 
     #items {
     display: flex;

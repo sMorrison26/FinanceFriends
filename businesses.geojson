@@ -5,17 +5,17 @@
       "properties": {
         "name":"First Choice Caribbean",
         "website":"https://www.restaurantji.com/ny/troy/first-choice-caribbean-/",
-      "address":
-      {
-        "street": "451 Fulton Street",
-        "city": "Troy",
-        "state": "NY",
-        "zip": "12180"
-      },
-      "description":"Authentic Jamaican food & Caribbean vegan cuisine"
+        "address":
+        {
+          "street": "451 Fulton Street",
+          "city": "Troy",
+          "state": "NY",
+          "zip": "12180"
+        },
+        "description":"Authentic Jamaican food & Caribbean vegan cuisine"
       },
       "geometry": {
-        "coordinates": [42.7321609, -73.6880956],
+        "coordinates": [-73.688095, 42.732160],
         "type": "Point"
       }
     },
@@ -34,7 +34,7 @@
       "description":"Forever Royal Haircare provides you with natural hair products made from organic ingredient"
       },
       "geometry": {
-        "coordinates": [42.7278315, -73.6895296],
+        "coordinates": [-73.689529, 42.727831],
         "type": "Point"
       }
     },
@@ -53,7 +53,7 @@
       "description":"Located at River Street Market Fresh juices with plant based meals and Healthy snack choices."
       },
       "geometry": {
-        "coordinates": [42.7372578,-73.6871924],
+        "coordinates": [-73.6871924, 42.737257],
         "type": "Point"
       }
     }
