@@ -229,13 +229,13 @@ function accpeted(id) {
                 if (id == feature.properties.name.replace(/ /g, "")) {
                     // Update the budget and time by the cost and time of the task using string to number conversion
                     if (0 > budget + parseInt(feature.properties.taskInfo.cost) && 0 > minutes - parseInt(feature.properties.taskInfo.time)) {
-                        $(`#${id}`).html(`<p>You dont have the budget or the time for that!</p>`);
+                        $(`#${id}`).html(`<p>You don't have the budget or the time for that!</p>`);
                     }
                     else if(0 > budget + parseInt(feature.properties.taskInfo.cost)) {
-                        $(`#${id}`).html(`<p>You dont have the budget for that!</p>`);
+                        $(`#${id}`).html(`<p>You don't have the budget for that!</p>`);
                     }
                     else if(0 > minutes - parseInt(feature.properties.taskInfo.time)) {
-                        $(`#${id}`).html(`<p>You dont have the budget or the time for that!</p>`);
+                        $(`#${id}`).html(`<p>You don't have the budget or the time for that!</p>`);
                     }
                     else {
                         budget += parseInt(feature.properties.taskInfo.cost);
@@ -327,19 +327,19 @@ function openPin(element, coords) {
         pitch: 65,
         bearing: 125
     });
-    //wait untill after fly
+    //wait until after fly
     
     setTimeout(() => {
         //simulate a click on the marker
         click(863, 510);
+        // get the center of the screen window
         var width = window.innerWidth / 2;
         var height = window.innerHeight / 2;
-        console.log(width);
-        console.log(height);
     }, 2000);
 
 }
-
+console.log(window.innerWidth );
+console.log(window.innerHeight);
 function click(x, y)
 {
     var ev = new MouseEvent('click', {
